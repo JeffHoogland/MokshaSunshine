@@ -1,0 +1,121 @@
+group 
+     {
+        name: "e/modules/bodhi-shutdown/button";
+        alias: "e/modules/syscon/button";
+		images {
+		 image: "shutdown.png" COMP;
+		 image: "button-normal.png" COMP;
+		 image: "button-pressed.png" COMP;
+		 image: "button-prelight.png" COMP;
+          }
+        min: 16 16;
+        max: 128 128;
+        parts 
+          {
+             part 
+               {
+                  name: "base";
+                  type: IMAGE;
+                  scale: 1;
+                  description 
+                    {
+                       state: "default" 0.0;
+                       fixed: 1 1;
+                       align: 0.5 0.5;
+                       min: 16 16;
+                       image 
+                         {
+                            normal: "button-normal.png";
+                            border: 6 6 6 6;
+                         }
+                    }
+                  description 
+                    {
+                       state: "clicked" 0.0;
+                       inherit: "default" 0.0;
+                       image.normal: "button-pressed.png";
+                    }
+                     description 
+                    {
+                       state: "over" 0.0;
+                       inherit: "default" 0.0;
+                       image.normal: "button-prelight.png";
+                    }
+               }
+             part 
+               {
+                  name: "icon";
+                  type: IMAGE;
+                  mouse_events: 0;
+                  description 
+                    {
+                       state: "default" 0.0;
+                       align: 0.5 0.5;
+                       aspect: 1.0 1.0;
+                       aspect_preference: BOTH;
+                       rel1 
+                         {
+                            offset: 2 3;
+                            to: "base";
+                         }
+                       rel2 
+                         {
+                            offset: -2 -3;
+                            to: "base";
+                         }
+                       image.normal: "shutdown.png";
+                    }
+               }
+         part { name: "event"; type: RECT;
+         ignore_flags: ON_HOLD;
+         description { state: "default" 0.0;
+            color: 0 0 0 0;
+            STAY_ON("base")
+         }
+         description { state: "disabled" 0.0;
+            inherit: "default" 0.0;
+            visible: 0;
+         }
+	 }
+          }
+        programs 
+          {
+			 program {
+			 name: "mouse_over";
+			 signal: "mouse,in";
+			 source: "event";
+			 action: STATE_SET "over" 0.0;
+			 target: "base";
+		 }
+		 program {
+			 name: "mouse_over_off";
+			 signal: "mouse,out";
+			 source: "event";
+			 action: STATE_SET "default" 0.0;
+			 target: "base";
+		 }
+             program 
+               {
+                  name: "button_down";
+                  signal: "mouse,down,1";
+                  source: "event";
+                  action: STATE_SET "clicked" 0.0;
+                  target: "base";
+               }
+             program 
+               {
+                  name: "button_up";
+                  signal: "mouse,up,1";
+                  source: "event";
+                  action: STATE_SET "default" 0.0;
+                  target: "base";
+               }
+             program 
+               {
+                  name: "button_clicked";
+                  signal: "mouse,clicked,1";
+                  source: "event";
+                  action: SIGNAL_EMIT "e,action,shutdown,show" "e";
+               }
+          }
+     }

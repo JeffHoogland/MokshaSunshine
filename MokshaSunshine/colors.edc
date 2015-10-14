@@ -1,0 +1,210 @@
+/* color classes are used to control the colors of text and also apply
+ * tints to images. These can be controlled with the colors dialog. Below
+ * are the standard color_class names that the module looks for in a
+ * theme. Consider color classes as a style that can be applied to many
+ * different items without tinkering with the theme.
+ *
+ * color: Font color     (Defaults to black)
+ * color2: Outline color  (Defaults to transparent)
+ * color3: Shadow color   (Defaults to transparent)
+ *
+ */
+ 
+color_classes {
+	color_class {
+		name: "border_top";
+		color: 255 255 255 255;
+	}
+	color_class {
+		name: "border_top_hilight";
+		color: 255 255 255 255;
+	}
+	color_class {
+		name: "border_bottom";
+		color: 255 255 255 255;
+	}
+	color_class {
+		name: "border_title";
+		color: 0 0 0 50;
+	}
+	color_class {
+		name: "border_title_active";
+		color: 0 0 0 255;
+	}
+	color_class {
+		name: "menu_base";
+		color: 255 255 255 255;
+	}
+	color_class {
+		name: "menu_title";
+		color: 0 0 0 255;
+		color3: 0 0 0 0;
+	}
+	color_class {
+		name: "menu_title_active";
+		color: 0 0 0 255;
+		color3: 0 0 0 0;
+	}
+	color_class {
+		name: "menu_item";
+		color: 255 255 255 255;
+		color3: 0 0 0 0;
+	}
+	color_class {
+		name: "menu_item_active";
+		color: 255 255 255 255;
+		color3: 0 0 0 0;
+	}
+	color_class {
+		name: "menu_item_disabled";
+		color: 110 110 110 255;
+		color3: 0 0 0 0;
+	}
+	color_class {
+		name: "shelf_base";
+		color: 255 255 255 255;
+	}
+	color_class {
+		name: "scrollframe_base";
+		color: 248 242 230 255;
+	}
+	// this seems totaly bogus, should be per module or really used as
+	// a unique color for all modules!
+	//	 color_class {
+	//		 name: "module_label";
+	//		 color: 0 0 0 0;
+	//	 }
+	color_class {
+		name: "winlist_label";
+		color: 0 0 0 255;
+	}
+	color_class {
+		name: "winlist_item";
+		color: 0 0 0 255;
+		color3: 0 0 0 0;
+	}
+	color_class {
+		name: "winlist_item_active";
+		color: 224 224 224 255;
+		color3: 0 0 0 64;
+	}
+	color_class {
+		name: "button_text";
+		color: 0 0 0 255;
+		color3: 255 255 255 0;
+	}
+	color_class {
+		name: "button_text_disabled";
+		color: 109 114 91 255;
+		color3: 255 255 255 255;
+	}
+	color_class {
+		name: "fileman_base";
+		color: 242 225 190 255;
+	}
+	color_class {
+		name: "ilist_item_base";
+		color: 245 237 220 255;
+	}
+	color_class {
+		name: "ilist_item_odd_base";
+		color: 236 229 215 255;
+	}
+	color_class {
+		name: "ilist_item_header_base";
+		color: 201 183 148 255;
+	}
+	color_class {
+		name: "ilist_item_header_odd_base";
+		color: 219 200 164 255;
+	}
+	color_class {
+		name: "ilist_item";
+		color: 0 0 0 255;
+		color3: 0 0 0 0;
+	}
+	color_class {
+		name: "ilist_item_odd";
+		color: 0 0 0 255;
+		color3: 0 0 0 0;
+	}
+	color_class {
+		name: "ilist_item_selected";
+		color: 0 0 0 255;
+		color3: 0 0 0 0;
+	}
+	color_class {
+		name: "ilist_item_header";
+		color: 0 0 0 255;
+		color3: 0 0 0 0;
+	}
+	color_class {
+		name: "ilist_item_header_odd";
+		color: 0 0 0 255;
+		color3: 0 0 0 0;
+	}
+	color_class {
+		name: "dialog_base";
+		color: 242 225 190 255;
+	}
+	color_class {
+		name: "move_text";
+		color: 0 0 0 255;
+	}
+	color_class {
+		name: "resize_text";
+		color: 0 0 0 255;
+	}
+	color_class {
+		name: "check_text";
+		color: 0 0 0 255;
+	}
+	color_class {
+		name: "check_text_disabled";
+		color: 0 0 0 128;
+	}
+	color_class {
+		name: "radio_text";
+		color: 0 0 0 255;
+	}
+	color_class {
+		name: "radio_text_disabled";
+		color: 0 0 0 128;
+	}
+	color_class {
+		name: "entry_text";
+		color: 0 0 0 255;
+	}
+	color_class {
+		name: "entry_text_disabled";
+		color: 128 128 128 255;
+	}
+	color_class {
+		name: "slider_text";
+		color: 0 0 0 255;
+	}
+	color_class {
+		name: "slider_text_disabled";
+		color: 0 0 0 128;
+	}
+	color_class {
+		name: "frame_base";
+		color: 255 255 255 255;
+	}
+	color_class {
+		name: "label_text";
+		color: 0 0 0 255;
+	}
+	color_class {
+		name: "label_text_disabled";
+		color: 0 0 0 128;
+	}
+	color_class {
+		name: "comp_focus-out_color";
+		color: 255 255 255 220;
+	}
+	color_class {
+		name: "fileman_popup_title";
+		color: 0 0 0 225;
+	}
+}

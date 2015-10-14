@@ -1,0 +1,145 @@
+style "scrollbar"
+{	
+	GtkScrollbar	::min-slider-length	= 30
+	GtkScrollbar	::slider-width		= 16
+	GtkScrollbar	::stepper-size		= 13
+	GtkScrollbar	::trough-border		= 0
+	GtkScrollbar	::activate-slider	= 1
+	GtkScrollbar	::trough-under-steppers	= 1
+	
+	engine "pixmap"
+	{
+	##Background
+		image
+		{
+		function	= BOX
+		recolorable	= TRUE
+		file		= "Images/Scrollbars/back.png"
+		border		= { 1, 1, 1,1 }
+		stretch		= TRUE
+		}
+
+	##Sliders
+		image 
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "Images/Scrollbars/scrollH1.png" 
+		border		= { 10, 10, 0, 0 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+
+		}
+
+		image 
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "Images/Scrollbars/scrollH2.png" 
+		border		= { 10, 10, 0, 0 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		}
+
+		image 
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "Images/Scrollbars/scrollH1.png" 
+		border		= { 10, 10, 0, 0 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		}
+
+		image 
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "Images/Scrollbars/scrollH1.png" 
+		border		= { 10, 10, 0, 0 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		}
+
+		image 
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "Images/Scrollbars/scrollV1.png" 
+		border		= { 0, 0, 10, 10 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		}
+
+		image 
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "Images/Scrollbars/scrollV2.png" 
+		border		= { 0, 0, 10, 10 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		}
+
+		image 
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "Images/Scrollbars/scrollV1.png" 
+		border		= { 0, 0, 10, 10 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		}
+
+		image 
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "Images/Scrollbars/scrollV1.png" 
+		border		= { 0, 0, 10, 10 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		}
+
+	##Stepper
+		image
+		{
+		function	= STEPPER
+		overlay_file	= "Images/Scrollbars/left1.png"
+		overlay_stretch	= FALSE
+		arrow_direction	= LEFT
+		}
+
+		image
+		{
+		function = STEPPER
+		overlay_file = "Images/Scrollbars/right1.png"
+		overlay_stretch	= FALSE
+		arrow_direction = RIGHT
+		}
+
+		image
+		{
+		function = STEPPER
+		overlay_file = "Images/Scrollbars/up1.png"
+		overlay_stretch	= FALSE
+		arrow_direction = UP
+		}
+
+		image
+		{
+		function = STEPPER
+		overlay_file = "Images/Scrollbars/down1.png"
+		overlay_stretch	= FALSE
+		arrow_direction = DOWN
+		}
+	}
+}

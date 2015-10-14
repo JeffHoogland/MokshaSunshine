@@ -1,0 +1,25 @@
+
+group { name: "elm/bg/base/default";
+   parts {
+      part { name: "base";
+         description { state: "default" 0.0;
+			image.normal: "dia_bg.png";
+			image.border: 15 15 2 2;
+            color_class: "dialog_base";
+			fill.smooth: 0;
+         }
+      }
+      part { name: "elm.swallow.rectangle"; type: SWALLOW;
+         description { state: "default" 0.0;
+         }
+      }
+      part { name: "elm.swallow.background"; type: SWALLOW;
+         description { state: "default" 0.0;
+         }
+      }
+      part { name: "elm.swallow.content"; type: SWALLOW;
+         description { state: "default" 0.0;
+         }
+      }
+   }
+}

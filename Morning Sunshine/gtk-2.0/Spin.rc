@@ -1,0 +1,146 @@
+style "spin"
+{	
+	base[INSENSITIVE]			= @base_color
+	GtkSpinButton::inner-border		= { 0, 0, 0, 0}
+	engine "pixmap"
+	{
+		image
+		{
+			function	= ARROW
+			recolorable	= TRUE
+			file		= "Images/Spin/down.png"
+			stretch		= TRUE
+			arrow_direction	= DOWN
+		}
+
+		image
+		{
+			function	= ARROW
+			recolorable	= TRUE
+			file		= "Images/Spin/up.png"
+			stretch		= TRUE
+			arrow_direction	= UP
+		}
+
+		image
+		{
+			function	= FOCUS
+			file		= "Images/null.png"
+			border		= {8,8,8,8}
+			stretch		= TRUE
+			recolorable	= TRUE
+		}
+
+		image
+		{
+			function	= SHADOW
+			file		= "Images/Spin/entry.png"
+			border		= {9,9,9,9}
+			stretch		= TRUE
+			state		= NORMAL
+			shadow		= IN
+		}
+
+		image
+  		{
+			function	= BOX
+			state		= NORMAL
+      			detail		= "spinbutton_up"
+			recolorable	= TRUE
+			file		= "Images/Spin/bgup1.png"
+			border		= { 4, 4, 4, 4}
+			stretch		= TRUE
+      			overlay_file	= "Images/up1.png"
+			overlay_stretch	= TRUE
+		}
+
+		image
+  		{
+			function	= BOX
+			state		= PRELIGHT
+      			detail		= "spinbutton_up"
+			recolorable	= TRUE
+			file		= "Images/Spin/bgup1.png"
+			border		= { 4, 4, 4, 4}
+			stretch		= TRUE
+      			overlay_file	= "Images/up2.png"
+			overlay_stretch	= TRUE
+		}
+
+		image
+  		{
+			function	= BOX
+			state		= INSENSITIVE
+      			detail		= "spinbutton_up"
+			recolorable	= TRUE
+			file		= "Images/Spin/bgup1.png"
+			border		= { 4, 4, 4, 4}
+			stretch		= TRUE
+      			overlay_file	= "Images/up0.png"
+			overlay_stretch	= TRUE
+		}
+
+		image
+  		{
+			function	= BOX
+			state		= ACTIVE
+      			detail		= "spinbutton_up"
+			recolorable	= TRUE
+			file		= "Images/Spin/bgup1.png"
+			border		= { 4, 4, 4, 4}
+			stretch		= TRUE
+      			overlay_file	= "Images/up3.png"
+			overlay_stretch	= TRUE
+		}
+
+		image
+  		{
+			function	= BOX
+			state		= NORMAL
+      			detail		= "spinbutton_down"
+			recolorable	= TRUE
+			file		= "Images/Spin/bgdown1.png"
+			border		= { 4, 4, 4, 4}
+			stretch		= TRUE
+      			overlay_file	= "Images/down1.png"
+			overlay_stretch	= TRUE
+		}
+		image
+  		{
+			function	= BOX
+			state		= PRELIGHT
+      			detail		= "spinbutton_down"
+			recolorable	= TRUE
+			file		= "Images/Spin/bgdown1.png"
+			border		= { 4, 4, 4, 4}
+			stretch		= TRUE
+      			overlay_file	= "Images/down2.png"
+			overlay_stretch	= TRUE
+		}
+		image
+  		{
+			function	= BOX
+			state		= ACTIVE
+      			detail		= "spinbutton_down"
+			recolorable	= TRUE
+			file		= "Images/Spin/bgdown1.png"
+			border		= { 4, 4, 4, 4}
+			stretch		= TRUE
+      			overlay_file	= "Images/down3.png"
+			overlay_stretch	= TRUE
+		}
+		image
+  		{
+			function	= BOX
+			state		= INSENSITIVE
+      			detail		= "spinbutton_down"
+			recolorable	= TRUE
+			file		= "Images/Spin/bgdown1.png"
+			border		= { 4, 4, 4, 4}
+			stretch		= TRUE
+      			overlay_file	= "Images/down0.png"
+			overlay_stretch	= TRUE
+		}
+
+	}
+}

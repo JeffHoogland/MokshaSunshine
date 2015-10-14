@@ -1,0 +1,158 @@
+style "scrolled"
+{
+	bg[NORMAL]	= @base_color
+	bg[ACTIVE]	= @base_color
+	bg[INSENSITIVE]	= @base_color
+	bg[PRELIGHT]	= @base_color
+	bg[SELECTED]	= @base_color
+
+	text[NORMAL]	= @text_color
+	fg[NORMAL]	= @text_color
+
+	xthickness	= 4
+	ythickness	= 5
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= SHADOW
+			shadow			= IN
+			recolorable		= TRUE
+			file			= "Images/Shadows/shadow-etched-in.png"
+			border			= { 5, 5, 5, 5}
+			stretch			= TRUE
+		}
+
+		image
+		{
+			function		= SHADOW
+			shadow			= OUT
+			recolorable		= FALSE
+			file			= "Images/null.png"
+			border			= { 5, 5, 5, 6}
+			stretch			= TRUE
+		}
+
+		image
+		{
+			function		= SHADOW
+			shadow			= ETCHED_IN
+			recolorable		= FALSE
+			file			= "Images/Shadows/scrolled.png"
+			border			= { 10, 10, 10, 10}
+			stretch			= TRUE
+		}
+
+		image
+		{
+			function		= SHADOW
+			shadow			= ETCHED_OUT
+			recolorable		= FALSE
+			file			= "Images/null.png"
+			border			= { 5, 5, 5, 6}
+			stretch			= TRUE
+		}
+	}
+}
+
+style "insidescrlld"
+{
+	bg[NORMAL]	= @base_color
+	bg[ACTIVE]	= @base_color
+	bg[INSENSITIVE]	= @base_color
+	bg[PRELIGHT]	= @base_color
+	bg[SELECTED]	= @base_color
+
+	text[NORMAL]	= @text_color
+	text[ACTIVE]	= @selected_fg_color
+	text[PRELIGHT]	= @text_color
+	text[SELECTED]	= @selected_fg_color
+	
+	fg[NORMAL]	= @text_color
+	fg[ACTIVE]	= @selected_fg_color
+	fg[PRELIGHT]	= @text_color
+	fg[SELECTED]	= @selected_fg_color
+}
+
+style "pcman"
+{
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= FLAT_BOX
+			#shadow			= IN
+			recolorable		= FALSE
+			file			= "Images/Shadows/shadow-etched-in.png"
+			border			= { 10, 10, 10, 10}
+			stretch			= TRUE
+		}
+
+		image
+		{
+			function		= SHADOW
+			shadow			= IN
+			recolorable		= FALSE
+			file			= "Images/Shadows/shadow-etched-in.png"
+			border			= { 10, 10, 10, 10}
+			stretch			= TRUE
+		}
+		
+		image
+		{
+			function		= SHADOW
+			shadow			= OUT
+			recolorable		= FALSE
+			file			= "Images/Shadows/shadow-etched-in.png"
+			border			= { 5, 5, 5, 6}
+			stretch			= TRUE
+		}
+
+		image
+		{
+			function		= SHADOW
+			shadow			= IN
+			state			= INSENSITIVE
+			recolorable		= FALSE
+			file			= "Images/Shadows/shadow-etched-in.png"
+			border			= { 10, 10, 10, 10}
+			stretch			= TRUE
+		}
+
+		image
+		{
+			function		= SHADOW
+			shadow			= OUT
+			state			= INSENSITIVE
+			recolorable		= FALSE
+			file			= "Images/Shadows/shadow-etched-in.png"
+			border			= { 5, 5, 5, 6}
+			stretch			= TRUE
+		}
+
+		image
+		{
+			function		= SHADOW
+			shadow			= ETCHED_IN
+			recolorable		= FALSE
+			file			= "Images/Shadows/shadow-etched-in.png"
+			border			= { 10, 10, 10, 10}
+			stretch			= TRUE
+		}
+
+		image
+		{
+			function		= SHADOW
+			shadow			= ETCHED_OUT
+			recolorable		= FALSE
+			file			= "Images/Shadows/shadow-etched-in.png"
+			border			= { 5, 5, 5, 6}
+			stretch			= TRUE
+		}	
+	}
+}
+
+class "GtkScrolledWindow"	style "scrolled"
+

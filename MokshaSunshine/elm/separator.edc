@@ -1,0 +1,22 @@
+group { name: "elm/separator/horizontal/default";
+	inherit: "e/widgets/menu/default/separator";
+}
+group { name: "elm/separator/vertical/default";
+   
+   images.image: "vline.png" COMP;
+   
+   parts {
+      part { name: "base";
+         description { state: "default" 0.0;
+			min: 2 16;
+            max: 2 99999;
+			rel1.offset: 2 2;
+			rel2.offset: -3 -3;
+            image.normal: "vline.png";
+            image.border: 1 1 1 1;
+            fill.smooth: 0;
+         }
+      }
+   }
+}
+   

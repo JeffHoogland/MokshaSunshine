@@ -1,0 +1,447 @@
+style "tree"
+{	
+	GtkTreeView	::row-ending-details	= 1
+	GtkTreeView	::odd-row-color		= "#ECE5D7"
+	GtkTreeView	::even-row-color	= "#F5EDDC"
+	GtkTreeView	::indent-expanders	= TRUE
+	GtkTreeView	::allow-rules		= 1
+
+	bg[NORMAL]	= "#DBC8A4"
+		
+	fg[ACTIVE]	= @selected_fg_color
+	fg[SELECTED]	= @selected_fg_color
+
+	text[ACTIVE]   	= @selected_fg_color
+	engine "pixmap"
+	{
+		
+		# Active Rows
+		#========================================================
+		
+		# Start Selected images
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_even_start"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/selected-s.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_odd_start"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/selected-s.png"
+			stretch		= TRUE
+		}		
+
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_even_ruled_start"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/selected-s.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_odd_ruled_start"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/selected-s.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_even_ruled_sorted_start"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/selected-s.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_odd_ruled_sorted_start"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/selected-s.png"
+			stretch		= TRUE
+		}
+		
+		# Middle Selected images
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_even_middle"
+			border          = {1, 1, 2, 2}
+			file            = "Images/Tree/selected-m.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_odd_middle"
+			border          = {1, 1, 2, 2}
+			file            = "Images/Tree/selected-m.png"
+			stretch		= TRUE
+		}
+
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_even_ruled_middle"
+			border          = {1, 1, 2, 2}
+			file            = "Images/Tree/selected-m.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_odd_ruled_middle"
+			border          = {1, 1, 2, 2}
+			file            = "Images/Tree/selected-m.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_even_ruled_sorted_middle"
+			border          = {1, 1, 2, 2}
+			file            = "Images/Tree/selected-m.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_odd_ruled_sorted_middle"
+			border          = {1, 1, 2, 2}
+			file            = "Images/Tree/selected-m.png"
+			stretch		= TRUE
+		}
+		
+		# End Selected images
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_even_end"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/selected-e.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_odd_end"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/selected-e.png"
+			stretch		= TRUE
+		}		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_even_ruled_end"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/selected-e.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_odd_ruled_end"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/selected-e.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_even_ruled_sorted_end"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/selected-e.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			detail		= "cell_odd_ruled_sorted_end"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/selected-e.png"
+			stretch		= TRUE
+		}
+		
+		# Normal Rows
+		#========================================================
+		
+		# Start Normal images
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_even_start"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/pari-s.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_odd_start"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/dispari-s.png"
+			stretch		= TRUE
+		}		
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_even_ruled_start"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/pari-s.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_odd_ruled_start"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/dispari-s.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_even_ruled_sorted_start"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/pari-s.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_odd_ruled_sorted_start"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/dispari-s.png"
+			stretch		= TRUE
+		}
+		
+		# Middle Normal images
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_even_middle"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/pari-m.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_odd_middle"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/dispari-m.png"
+			stretch		= TRUE
+		}
+
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_even_ruled_middle"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/pari-m.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_odd_ruled_middle"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/dispari-m.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_even_ruled_sorted_middle"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/pari-m.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_odd_ruled_sorted_middle"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/dispari-m.png"
+			stretch		= TRUE
+		}
+		# End Normal images
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_even_end"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/pari-e.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_odd_end"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/dispari-e.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_even_ruled_end"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/pari-e.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_odd_ruled_end"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/dispari-e.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_even_ruled_sorted_end"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/pari-e.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_odd_ruled_sorted_end"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/dispari-e.png"
+			stretch		= TRUE
+		}
+				
+		image
+		{
+			function        = BOX
+			state           = ACTIVE
+			border          = {2,2,2,2}
+			file            = "Images/Tree/selected.png"
+			stretch		= TRUE
+		}
+		
+		# This is for treeviews with only one column
+		image
+		{
+			function        = FLAT_BOX
+			state           = SELECTED
+			border          = {6, 2, 2, 2}
+			file            = "Images/Tree/selected.png"
+			stretch		= TRUE
+		}
+		
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_odd"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/pari.png"
+			stretch		= TRUE
+		}
+		image
+		{
+			function        = FLAT_BOX
+			state           = NORMAL
+			detail 		= "cell_even"
+			border          = {2, 2, 2, 2}
+			file            = "Images/Tree/dispari.png"
+			stretch		= TRUE
+		}
+
+
+
+		# this is needed for the progressbars inside treeviews (e.g. Transmission, System Info)
+	        image
+		{
+			function        = BOX
+			state           = SELECTED
+			border          = {2,2,2,2}
+			file            = "Images/Tree/selected.png"
+			stretch		= TRUE
+		}
+
+	}
+}
+
+style "listheader"
+{	GtkButton	::inner-border		= {0,0,0,0}
+	font_name = "Bold"
+
+	bg[NORMAL]	= "#DBC8A4"
+
+	fg[NORMAL]	= @selected_fg_color
+	fg[PRELIGHT]	= @selected_fg_color
+	fg[ACTIVE]	= @selected_fg_color
+
+	engine "pixmap"
+	{
+		image
+		{
+			function	= BOX
+		}
+	}
+}
+
+style "evolution-listheader"
+{	GtkButton	::inner-border		= {0,0,0,0}
+
+	bg[NORMAL]	= "#DBC8A4"
+
+	fg[NORMAL]	= @selected_fg_color
+
+	engine "pixmap"
+	{
+		image
+		{
+			function	= BOX
+		}
+	}
+}

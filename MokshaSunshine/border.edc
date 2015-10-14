@@ -1,0 +1,1371 @@
+#define BORDER(NAME, MIN, MAX, REL1, OFF1, REL2, OFF2, IMG1, RELF1, RELF2, OFFF2) 	\
+part { 								\
+	name: NAME; 						\
+	type: IMAGE;						\
+	mouse_events: 0; 					\
+								\
+	description { 						\
+		state: "default" 0.0; 				\
+		min: MIN; 					\
+		max: MAX; 					\
+		fixed: 1 1;					\
+								\
+		rel1 { 						\
+			relative: REL1; 			\
+			offset: OFF1; 				\
+		}						\
+								\
+		rel2 { 						\
+			relative: REL2; 			\
+			offset: OFF2; 				\
+		} 						\
+								\
+		image { 					\
+			normal: IMG1; 				\
+		} 						\
+	} 							\
+	description {						\
+		state: "default" 0.1;				\
+		inherit: "default" 0.0;				\
+		min: MIN; 					\
+		max: MAX; 					\
+		rel1 { 						\
+			relative: RELF1; 			\
+			offset: OFF1; 				\
+			to_y: "top-center";			\
+		}						\
+								\
+		rel2 { 						\
+			relative: RELF2; 			\
+			offset: OFFF2; 				\
+			to_y: "top-center";			\
+		} 						\
+		visible: 0;					\
+	}							\
+}
+
+#define BORDER2(NAME,TO1,REL1,OFF1,TO2,REL2,OFF2) 	\
+part { 							\
+	name: NAME; 					\
+	type: RECT; 					\
+	mouse_events: 0;				\
+							\
+	description { 					\
+		state: "default" 0.0; 			\
+		min: 1 1; 				\
+		max: 1 9999; 				\
+		color: 217 200 160 255; 		\
+							\
+		rel1 { 					\
+			to: TO1; 			\
+			relative: REL1; 		\
+			offset: OFF1; 			\
+		} 					\
+							\
+		rel2 { 					\
+			to: TO2; 			\
+			relative: REL2; 		\
+			offset: OFF2; 			\
+		} 					\
+	} 						\
+}
+
+#define BORDER3(NAME, MIN, MAX, TO1, REL1, OFF1, TO2, REL2, OFF2, IMG1, RELF1, RELF2, OFFF2) \
+part { 									\
+	name: NAME; 							\
+	type: IMAGE;							\
+	mouse_events: 0; 						\
+									\
+	description { 							\
+		state: "default" 0.0; 					\
+		min: MIN; 						\
+		max: MAX; 						\
+									\
+		rel1 { 							\
+			to: TO1; 					\
+			relative: REL1; 				\
+			offset: OFF1; 					\
+		} 							\
+									\
+		rel2 { 							\
+			to: TO2; 					\
+			relative: REL2; 				\
+			offset: OFF2; 					\
+		} 							\
+									\
+		image { 						\
+			normal: IMG1; 					\
+			border: 72 0 0 0;				\
+		}							\
+	} 								\
+	description {							\
+		state: "default" 0.1;					\
+		inherit: "default" 0.0;					\
+		min: 0 0; 						\
+		max: 9999 0; 						\
+		rel1 { 							\
+			relative: RELF1; 				\
+			offset: OFF1; 					\
+		}							\
+									\
+		rel2 { 							\
+			relative: RELF2; 				\
+			offset: OFFF2; 					\
+		} 							\
+		visible: 0;						\
+	}								\
+}
+
+#define BORDER4(NAME, MIN, MAX, REL1, OFF1, REL2, OFF2, IMG1, RELF1, RELF2, OFFF2, OFFS1)	\
+part { 								\
+	name: NAME; 						\
+	type: IMAGE;						\
+	mouse_events: 0; 					\
+								\
+	description { 						\
+		state: "default" 0.0; 				\
+		min: MIN; 					\
+		max: MAX; 					\
+		fixed: 1 1;					\
+								\
+		rel1 { 						\
+			relative: REL1; 			\
+			offset: OFF1; 				\
+		}						\
+								\
+		rel2 { 						\
+			relative: REL2; 			\
+			offset: OFF2; 				\
+		} 						\
+								\
+		image { 					\
+			normal: IMG1; 				\
+		} 						\
+	} 							\
+	description {						\
+		state: "default" 0.1;				\
+		inherit: "default" 0.0;				\
+		min: MIN; 					\
+		max: MAX; 					\
+		rel1 { 						\
+			relative: RELF1; 			\
+			offset: OFF1; 				\
+			to_y: "top-center";			\
+		}						\
+								\
+		rel2 { 						\
+			relative: RELF2; 			\
+			offset: OFFF2; 				\
+			to_y: "top-center";			\
+		} 						\
+		visible: 0;					\
+	}							\
+	desc { "shaded";	\
+		inherit: "default" 0.0;	\
+		rel1.offset: OFFS1;	\
+	}	\
+}
+
+#define SHADOW_PART(TO1, OFF1, TO2, OFF2)									\
+part { name: "shadow_clip"; type: RECT;	mouse_events: 0;					\
+         description { state: "default" 0.0;								\
+            STAY_ON("shadow")												\
+            color: VISIBLE;													\
+         }																	\
+         description { state: "hidden" 0.0;									\
+            inherit: "default" 0.0;											\
+            color: TRANSPARENT;												\
+            visible: 0;														\
+         }																	\
+      }																		\
+      part { name: "shadow"; mouse_events: 0;								\
+         clip_to: "shadow_clip";											\
+         description { state: "default" 0.0;								\
+            image.normal: "win_shadow.png";									\
+            image.border: 10 10 15 14;	/*left right top bottom;*/			\
+            image.middle: 0;												\
+            rel1.to: TO1;													\
+            rel1.offset: OFF1;												\
+            rel2.to: TO2;													\
+            rel2.offset: OFF2;												\
+            fill.smooth: 0;													\
+            color: 0 0 0 150;												\
+         }																	\
+         description { state: "maximized" 0.0;								\
+			inherit: "default" 0.0;											\
+			visible: 0; color: TRANSPARENT;									\
+         }																	\
+      }
+
+#define E_SWALLOW_CLIENT(NAME, TO1, REL1, OFF1, TO2, REL2, OFF2) 	\
+part { name: "client_clip"; type: RECT;								\
+         description { state: "default" 0.0;								\
+            rel1.to_y: "e.swallow.client";									\
+            rel2.to_y: "e.swallow.client";									\
+         }																	\
+         description { state: "hidden" 0.0;									\
+			inherit: "default" 0.0;											\
+			visible: 0;														\
+		}																	\
+      }									\
+part { 									\
+	name: NAME; mouse;						\
+	clip_to: "client_clip";					\
+	type: SWALLOW; 							\
+	mouse_events: 0; 						\
+									\
+	description { 							\
+		state: "default" 0.0; 					\
+									\
+		rel1 { 							\
+			to_y: TO1; 					\
+			relative: REL1;					\
+			offset: OFF1; 					\
+		} 							\
+									\
+		rel2 { 							\
+			to_x: TO2; 					\
+			relative: REL2; 				\
+			offset: OFF2; 					\
+		} 							\
+	} 								\
+	description {	\
+		state: "shaded" 0.0;	\
+		inherit: "default" 0.0;	\
+		visible: 0;	\
+	}	\
+}
+
+#define TITLE_CLIP(NAME, MIN, TO1, REL1, OFF1, TO2, REL2, OFF2, COLOR) 	\
+part { 									\
+	name: NAME; 							\
+	type: RECT; 							\
+	mouse_events: 0; 						\
+									\
+	description { 							\
+		state: "default" 0.0; 					\
+		min: MIN; 						\
+		color: COLOR; 						\
+									\
+		rel1 { 							\
+			to: TO1; 					\
+			relative: REL1; 				\
+			offset: OFF1; 					\
+		} 							\
+									\
+		rel2 { 							\
+			to: TO2; 					\
+			relative: REL2; 				\
+			offset: OFF2; 					\
+		} 							\
+	} 								\
+}
+
+#define E_SWALLOW_ICON(NAME, RELT)		\
+part { 						\
+	name: NAME; 				\
+	type: SWALLOW; 				\
+						\
+	description { 				\
+		state: "default" 0.0; 		\
+		aspect: 1.0 1.0;		\
+		aspect_preference: BOTH;	\
+						\
+		rel1 {				\
+			to: RELT; 		\
+		} 				\
+						\
+		rel2 { 				\
+			to: RELT; 		\
+		} 				\
+	} 					\
+						\
+	description {				\
+		state: "urgent" 0.0;		\
+		inherit: "default" 0.0;		\
+		color: 255 255 255 0;		\
+	}					\
+}
+
+#define MOVE_WINDOW(NAME, MIN, MAX, TO1, REL1, OFF1, TO2, REL2, OFF2, COLOR) 	\
+part { 										\
+	name: NAME; 								\
+	type: RECT; 								\
+										\
+	description { 								\
+		state: "default" 0.0; 						\
+		min: MIN; 							\
+		max: MAX; 							\
+		color: COLOR; 							\
+										\
+		rel1 { 								\
+			to: TO1; 						\
+			relative: REL1; 					\
+			offset: OFF1; 						\
+		} 								\
+										\
+		rel2 { 								\
+			to: TO2; 						\
+			relative: REL2; 					\
+			offset: OFF2; 						\
+		} 								\
+	} 									\
+}
+
+#define E_EVENT_ICON(NAME, TO1, TO2)	 		\
+part { 							\
+	name: NAME; 					\
+	type: RECT; 					\
+	mouse_events: 1; 				\
+							\
+	description { 					\
+		state: "default" 0.0; 			\
+		align: 0.0 0.5;				\
+		aspect: 1.0 1.0;			\
+		aspect_preference: VERTICAL;		\
+		color: 255 255 255 0; 			\
+		visible: 1;				\
+							\
+		rel1 { 					\
+			to: TO1; 			\
+			offset: 5 3;			\
+			relative: 1 0;			\
+		} 					\
+							\
+		rel2 { 					\
+			to: TO2; 			\
+			relative: 1 1;			\
+		} 					\
+	}						\
+}
+
+#define CLIPS(NAME, MIN, MAX, TO, REL1, OFF1, REL2, OFF2) 	\
+part { 								\
+	name: NAME; 						\
+	type: RECT; 						\
+	mouse_events: 0; 					\
+								\
+	description { 						\
+		state: "default" 0.0; 				\
+		min: MIN; 					\
+		max: MAX; 					\
+		color: 255 255 255 255; 			\
+								\
+		rel1 { 						\
+			to: TO; 				\
+			relative: REL1; 			\
+			offset: OFF1; 				\
+		} 						\
+								\
+		rel2 { 						\
+			to: TO; 				\
+			relative: REL2; 			\
+			offset: OFF2; 				\
+		} 						\
+	} 							\
+								\
+	description { 						\
+		state: "clicked" 0.0; 				\
+		inherit: "default" 0.0; 			\
+		color: 215 215 215 255;				\
+	} 							\
+}
+
+#define BUTTONS(NAME, CLIP, SIZE, TO, IMG) 		\
+part { 							\
+	name: NAME; 					\
+	type: IMAGE;					\
+	mouse_events: 1; 				\
+	clip_to: CLIP; 					\
+							\
+	description { 					\
+		state: "default" 0.0; 			\
+		min: SIZE; 				\
+		max: SIZE; 				\
+		color: 255 255 255 255;			\
+		rel1 { 					\
+			to: TO; 			\
+		} 					\
+							\
+		rel2 { 					\
+			to: TO; 			\
+		} 					\
+							\
+		image { 				\
+			normal: IMG; 			\
+		} 					\
+	} 						\
+							\
+	description { 					\
+		state: "clicked" 0.0; 			\
+		inherit: "default" 0.0; 		\
+		color: 215 215 215 255;			\
+	} 						\
+	description { 					\
+		state: "default" 0.1; 			\
+		inherit: "default" 0.0; 		\
+		color: 255 255 255 192;			\
+	} 						\
+}
+
+#define RESIZE_TOP(NAME, MIN, MAX, TO1, REL1, OFF1, TO2, REL2, OFF2, COLOR) 	\
+part { 										\
+	name: NAME; 								\
+	type: RECT;								\
+	mouse_events: 0; 							\
+										\
+	description { 								\
+		state: "default" 0.0; 						\
+		min: MIN; 							\
+		max: MAX; 							\
+		color: COLOR; 							\
+										\
+		rel1 { 								\
+			to: TO1; 						\
+			relative: REL1; 					\
+			offset: OFF1; 						\
+		} 								\
+										\
+		rel2 { 								\
+			to: TO2; 						\
+			relative: REL2; 					\
+			offset: OFF2; 						\
+		} 								\
+	} 									\
+}
+
+#define PART_EVENT_MAP(NAME, REPEAT, PART_NAME) \
+part { 						\
+	name: NAME; 				\
+	type: RECT; 				\
+	repeat_events: REPEAT; 			\
+						\
+	description { 				\
+		state: "default" 0.0; 		\
+		color: 0 0 0 0; 		\
+						\
+		rel1 { 				\
+			to: PART_NAME; 		\
+		} 				\
+						\
+		rel2 { 				\
+			to: PART_NAME; 		\
+		} 				\
+	} 					\
+}
+
+#define BORDER_DEFAULT_PROGRAMS() \
+program { \
+	name: "active"; \
+	signal: "e,state,focused"; \
+	source: "e"; \
+	action: STATE_SET "default" 0.0; \
+	transition: LINEAR 0.2; \
+	target: "e.text.title"; \
+	target: "button-close"; \
+	target: "button-min"; \
+	target: "button-max"; \
+	target: "text_alt"; \
+	target: "top-center-over"; \
+	target: "top-right-over"; \
+} \
+program { \
+	name: "inactive"; \
+	signal: "e,state,unfocused"; \
+	source: "e"; \
+	action: STATE_SET "default" 0.1; \
+	transition: LINEAR 0.2; \
+	target: "e.text.title"; \
+	target: "button-close"; \
+	target: "button-min"; \
+	target: "button-max"; \
+	target: "text_alt"; \
+	target: "top-center-over"; \
+	target: "top-right-over"; \
+} \
+program { \
+	name: "close_click"; \
+	signal: "mouse,down,1"; \
+	source: "button-close"; \
+	action: STATE_SET "clicked" 0.0; \
+	target: "button-close"; \
+} \
+program { \
+	name: "close_unclick"; \
+	signal: "mouse,up,1"; \
+	source: "button-close"; \
+	action: STATE_SET "default" 0.0; \
+	target: "button-close"; \
+} \
+program { \
+	name: "max_click"; \
+	signal: "mouse,down,1"; \
+	source: "button-max"; \
+	action: STATE_SET "clicked" 0.0; \
+	target: "button-max"; \
+} \
+program { \
+	name: "max_unclick"; \
+	signal: "mouse,up,1"; \
+	source: "button-max"; \
+	action: STATE_SET "default" 0.0; \
+	target: "button-max"; \
+} \
+program { \
+	name: "min_click"; \
+	signal: "mouse,down,1"; \
+	source: "button-min"; \
+	action: STATE_SET "clicked" 0.0; \
+	target: "button-min"; \
+} \
+program { \
+	name: "min_unclick"; \
+	signal: "mouse,up,1"; \
+	source: "button-min"; \
+	action: STATE_SET "default" 0.0; \
+	target: "button-min"; \
+} \
+program { \
+	name: "urgent"; \
+	signal: "e,state,urgent"; \
+	source: "e"; \
+	action: STATE_SET "urgent" 0.0; \
+	transition: DECELERATE 0.5; \
+	target: "e.swallow.icon"; \
+	after: "urgent2"; \
+} \
+program { \
+	name: "urgent2"; \
+	signal: ""; \
+	source: ""; \
+	action: STATE_SET "default" 0.0; \
+	transition: DECELERATE 0.5; \
+	target: "e.swallow.icon"; \
+	after: "urgent"; \
+} \
+program { \
+	name: "stop"; \
+	signal: "e,state,not_urgent"; \
+	source: "e"; \
+	action: ACTION_STOP; \
+	target: "urgent"; \
+	target: "urgent2"; \
+}		\
+/*Shading Programs*/							\
+      program { name: "shade_hide";					\
+         action: STATE_SET "hidden" 0.0;			\
+         target: "client_clip";						\
+      }												\
+      program {										\
+			signal: "e,state,shading"; source: "e";	\
+			action: STATE_SET "shaded" 0.0;			\
+			target: "e.swallow.client";				\
+			target: "bottom-left";			\
+			target: "bottom-right";			\
+	  }												\
+	  program {										\
+			signal: "e,state,unshaded"; source: "e";\
+			action: STATE_SET "default" 0.0;		\
+			target: "e.swallow.client";				\
+			target: "bottom-left";			\
+			target: "bottom-right";			\
+	  }												\
+	  program { name: "unshading";					\
+         signal: "e,state,unshading"; source: "e";	\
+         action: STATE_SET "default" 0.0;			\
+         target: "e.swallow.client";				\
+         target: "shadow";							\
+         target: "client_clip";						\
+      }												\
+      /*Shadow Programs*/							\
+	  program {										\
+         signal: "e,state,shadow,on"; source: "e";	\
+         action: STATE_SET "default" 0.0;			\
+         target: "shadow_clip";						\
+      }												\
+      program {										\
+         signal: "e,state,shadow,off"; source: "e";	\
+         action: STATE_SET "hidden" 0.0;			\
+         target: "shadow_clip";						\
+	 }
+
+#define BORDER_int_PROGRAMS() \
+program { \
+	name: "active"; \
+	signal: "e,state,focused"; \
+	source: "e"; \
+	action: STATE_SET "default" 0.0; \
+	transition: LINEAR 0.2; \
+	target: "e.text.title"; \
+	target: "button-close"; \
+	target: "text_alt"; \
+	target: "top-center-over"; \
+	target: "top-right-over"; \
+} \
+program { \
+	name: "inactive"; \
+	signal: "e,state,unfocused"; \
+	source: "e"; \
+	action: STATE_SET "default" 0.1; \
+	transition: LINEAR 0.2; \
+	target: "e.text.title"; \
+	target: "button-close"; \
+	target: "text_alt"; \
+	target: "top-center-over"; \
+	target: "top-right-over"; \
+} \
+program { \
+	name: "close_click"; \
+	signal: "mouse,down,1"; \
+	source: "button-close"; \
+	action: STATE_SET "clicked" 0.0; \
+	target: "button-close"; \
+} \
+program { \
+	name: "close_unclick"; \
+	signal: "mouse,up,1"; \
+	source: "button-close"; \
+	action: STATE_SET "default" 0.0; \
+	target: "button-close"; \
+} \
+program { \
+	name: "urgent"; \
+	signal: "e,state,urgent"; \
+	source: "e"; \
+	action: STATE_SET "urgent" 0.0; \
+	transition: DECELERATE 0.5; \
+	target: "e.swallow.icon"; \
+	after: "urgent2"; \
+} \
+program { \
+	name: "urgent2"; \
+	signal: ""; \
+	source: ""; \
+	action: STATE_SET "default" 0.0; \
+	transition: DECELERATE 0.5; \
+	target: "e.swallow.icon"; \
+	after: "urgent"; \
+} \
+program { \
+	name: "stop"; \
+	signal: "e,state,not_urgent"; \
+	source: "e"; \
+	action: ACTION_STOP; \
+	target: "urgent"; \
+	target: "urgent2"; \
+}	\
+/*Shading Programs*/							\
+      program { name: "shade_hide";					\
+         action: STATE_SET "hidden" 0.0;			\
+         target: "client_clip";						\
+      }												\
+      program {										\
+			signal: "e,state,shading"; source: "e";	\
+			action: STATE_SET "shaded" 0.0;			\
+			target: "e.swallow.client";				\
+			target: "bottom-left";			\
+			target: "bottom-right";			\
+	  }												\
+	  program {										\
+			signal: "e,state,unshaded"; source: "e";\
+			action: STATE_SET "default" 0.0;		\
+			target: "e.swallow.client";				\
+			target: "bottom-left";			\
+			target: "bottom-right";			\
+	  }												\
+	  program { name: "unshading";					\
+         signal: "e,state,unshading"; source: "e";	\
+         action: STATE_SET "default" 0.0;			\
+         target: "e.swallow.client";				\
+         target: "shadow";							\
+         target: "client_clip";						\
+      }												\
+      /*Shadow Programs*/							\
+	  program {										\
+         signal: "e,state,shadow,on"; source: "e";	\
+         action: STATE_SET "default" 0.0;			\
+         target: "shadow_clip";						\
+      }												\
+      program {										\
+         signal: "e,state,shadow,off"; source: "e";	\
+         action: STATE_SET "hidden" 0.0;			\
+         target: "shadow_clip";						\
+	 }
+
+
+
+group {
+	name: "e/widgets/border/default/border";
+	alias: "e/widgets/border/shaped/border";
+
+	data {
+		item: "shadow" "1";
+	}
+
+	parts {
+		SHADOW_PART("top-left", -9 -10, "bottom-right", 9 10)
+		BORDER("top-left", 6 23, 6 23, 0.0 0.0, 3 22, 0.0 0.0, 3 0, "bd_top_left.png", 0.0 0.0, 0.0 0.0, 3 22)
+		BORDER("top-right", 6 23, 6 23, 1.0 0.0, 0 22, 1.0 0.0, -6 0, "bd_top_right.png", 1.0 0.0, 1.0 0.0, 0 22)
+		BORDER4("bottom-left", 5 5, 5 5, 0.0 1.0, 3 -6, 0.0 1.0, 3 0, "bd_bottom_left.png", 0.0 1.0, 0.0 1.0, 5 -6, 1 5)
+		BORDER4("bottom-right", 5 5, 5 5, 1.0 1.0, 0 -6, 1.0 1.0, -6 0, "bd_bottom_right.png", 1.0 1.0, 1.0 1.0, 0 -6, 1 5)
+		BORDER2("left-border", "top-left", 0.0 1.0, 0 0, "bottom-left", 0.0 0.0, 0 0)
+		BORDER2("right-border", "top-right", 1.0 1.0, -1 0, "bottom-right", 1.0 0.0, 0 0 )
+		BORDER3("top-center", 5 23, 9999 23, "top-left", 1.0 0.5, 0 0, "top-right", 0.0 0.5, -1 -2, "bd_top.png", 1.0 0.5, 0.0 0.5, 0 0)
+		BORDER3("bottom-center", 5 5, 9999 5, "bottom-left", 1.0 1.0, 0 -6, "bottom-right", 0.0 1.0, -1 0, "bd_bottom.png", 1.0 1.0, 0.0 1.0, 0 -6)
+		E_SWALLOW_CLIENT("e.swallow.client", "top-left", 0.0 1.0, 1 0, "bottom-right", 1.0 1.0, -2 -6)
+		TITLE_CLIP("title.area.clip", 1 20, "min-clip", 1.0 0.5, 10 0, "top-right", 1.0 0.5, -30 0, 255 255 255 255)
+		part { 	name: "e.text.title";
+			type: TEXT;
+			effect: SOFT_SHADOW BOTTOM;
+			mouse_events: 0;
+			clip_to: "title.area.clip";
+			scale: 1;
+
+			description {
+				state: "default" 0.0;
+				color: 255 255 255 255;
+				color3: 255 255 255 255;
+				color_class: "border_title";
+				rel1 {
+					to: "title.area.clip";
+					relative: 0.0 0.5;
+					offset: 0 4; 
+				}
+
+				rel2 { 
+					to: "title.area.clip";
+					relative: 1.0 0.5; 
+					offset: -5 0;
+				}
+
+				text {
+					text: "";
+					font: "Sans";
+					size: 10;
+					min: 0 1;
+					align: 0.5 0.5;
+					text_class: "title_bar";
+				}
+				visible: 0;
+			}
+
+			description { 
+				state: "default" 0.1; 
+				inherit: "default" 0.0;
+				visible: 1;
+			}
+		}
+		BORDER("top-right-over", 6 23, 6 23, 1.0 0.0, 0 22, 1.0 0.0, -6 0, "bd_top_right_over.png", 1.0 1.0, 1.0 0.0, -5 23)
+		BORDER3("top-center-over", 5 23, 9999 23, "top-left", 1.0 0.5, 0 0, "top-right", 0.0 0.5, -1 -2, "bd_top_over.png", 1.0 1.0, 0.0 1.0, -1 -2)
+
+		MOVE_WINDOW("move-window", 1 22, 9999 22, "top-left", 0.0 0.0, 5 2, "top-right", 1.0 1.0, -7 -1, 255 0 0 0)
+		PART_EVENT_MAP("e.event.resize.t", 0, "resize_t")
+		PART_EVENT_MAP("e.event.titlebar", 0, "move-window")
+		PART_EVENT_MAP("e.event.resize.r", 0, "right-border")
+		PART_EVENT_MAP("e.event.resize.l", 0, "left-border")
+		PART_EVENT_MAP("e.event.resize.br", 0, "bottom-right")
+		PART_EVENT_MAP("e.event.resize.bl", 0, "bottom-left")
+		PART_EVENT_MAP("e.event.resize.b", 0, "bottom-center")
+		PART_EVENT_MAP("e.event.resize.tr", 0, "top-right")
+		PART_EVENT_MAP("e.event.resize.tl", 0, "top-left")		
+		CLIPS("close-clip", 20 18, 20 18, "top-left", 0.0 0.0, 0 0, 0.0 1.0, 30 -8)
+		CLIPS("max-clip", 20 18, 20 18, "close-clip", 1.0 0.0, 0 0, 0.0 1.0, 30 -1)
+		CLIPS("min-clip", 20 18, 20 18, "max-clip", 1.0 0.0, 0 0, 0.0 1.0, 30 -1)
+		BUTTONS("button-close", "close-clip", 15 15, "close-clip", "bd_button_close_unfocused.png")
+		BUTTONS("button-max", "max-clip", 15 15, "max-clip", "bd_button_max_unfocused.png")
+		BUTTONS("button-min", "min-clip", 15 15, "min-clip", "bd_button_min_unfocused.png")
+		PART_EVENT_MAP("e.event.close", 1, "button-close")
+		PART_EVENT_MAP("e.event.maximize", 1, "button-max")
+		PART_EVENT_MAP("e.event.minimize", 1, "button-min")
+		RESIZE_TOP("resize_t", 1 2, 9999 2, "top-left", 0.0 0.0, 0 0, "top-right", 0.0 0.0, -1 0, 255 0 0 0)
+		part { name: "text_alt";
+			type: TEXT;
+			effect: SOFT_SHADOW BOTTOM;
+			mouse_events: 0;
+			clip_to: "title2_rect";
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				color: 255 255 255 255;
+				color3: 255 255 255 255;
+				color_class: "border_title_active";
+				rel1 {
+					to: "e.text.title";
+				}
+
+				rel2 {
+					to: "e.text.title";
+				}
+				text {
+					text_source: "e.text.title";
+					font: "Sans";
+					size: 10;
+					min: 0 1;
+					align: 0.5 0.5;
+					text_class: "title_bar_alt";
+				}
+				visible: 1;
+			}
+
+			description { 
+				state: "default" 0.1; 
+				inherit: "default" 0.0;
+				color: 0 0 0 0;
+				visible: 0;
+			} 
+		}
+		part { name: "title2_rect";
+			type: RECT;
+			mouse_events: 0;
+			description {
+				state: "default" 0.0;
+				rel1.to: "top-center-over";
+				rel2.to: "top-center-over";
+			}
+		}
+		E_SWALLOW_ICON("e.swallow.icon", "e.event.icon") 
+		E_EVENT_ICON("e.event.icon", "title.area.clip", "title.area.clip")
+	}
+
+	programs {
+		BORDER_DEFAULT_PROGRAMS()
+	}
+}
+
+group {
+	name: "e/widgets/border/squared/border";
+
+	data {
+		item: "shadow" "1";
+	}
+
+	parts {
+		SHADOW_PART("top-left", -9 -10, "bottom-right", 9 10)
+		BORDER("top-left", 6 23, 6 23, 0.0 0.0, 3 22, 0.0 0.0, 3 0, "bd_top_lefts.png", 0.0 0.0, 0.0 0.0, 3 22)
+		BORDER("top-right", 6 23, 6 23, 1.0 0.0, 0 22, 1.0 0.0, -6 0, "bd_top_rights.png", 1.0 0.0, 1.0 0.0, 0 22)
+		BORDER4("bottom-left", 5 5, 5 5, 0.0 1.0, 2 -6, 0.0 1.0, 2 0, "bd_bottom_lefts.png", 0.0 1.0, 0.0 1.0, 5 -6, 1 5)
+		BORDER4("bottom-right", 5 5, 5 5, 1.0 1.0, 0 -6, 1.0 1.0, -6 0, "bd_bottom_rights.png", 1.0 1.0, 1.0 1.0, 0 -6, 1 5)
+		BORDER2("left-border", "top-left", 0.0 1.0, 0 0, "bottom-left", 0.0 0.0, 0 0)
+		BORDER2("right-border", "top-right", 1.0 1.0, -1 0, "bottom-right", 1.0 0.0, 0 0 )
+		BORDER3("top-center", 5 23, 9999 23, "top-left", 1.0 0.5, 0 0, "top-right", 0.0 0.5, -1 -2, "bd_top.png", 1.0 0.5, 0.0 0.5, 0 0)
+		BORDER3("bottom-center", 5 5, 9999 5, "bottom-left", 1.0 1.0, 0 -6, "bottom-right", 0.0 1.0, -1 0, "bd_bottom.png", 1.0 1.0, 0.0 1.0, 0 -6)
+		E_SWALLOW_CLIENT("e.swallow.client", "top-left", 0.0 1.0, 1 0, "bottom-right", 1.0 1.0, -2 -6)
+		TITLE_CLIP("title.area.clip", 1 20, "min-clip", 1.0 0.5, 10 0, "top-right", 1.0 0.5, -30 0, 255 255 255 255)
+		part { 	name: "e.text.title";
+			type: TEXT;
+			effect: SOFT_SHADOW BOTTOM;
+			mouse_events: 0;
+			clip_to: "title.area.clip";
+			scale: 1;
+
+			description {
+				state: "default" 0.0;
+				color: 255 255 255 255;
+				color3: 255 255 255 255;
+				color_class: "border_title";
+				rel1 {
+					to: "title.area.clip";
+					relative: 0.0 0.5;
+					offset: 0 4; 
+				}
+
+				rel2 { 
+					to: "title.area.clip";
+					relative: 1.0 0.5; 
+					offset: -5 0;
+				}
+
+				text {
+					text: "";
+					font: "Sans";
+					size: 10;
+					min: 0 1;
+					align: 0.5 0.5;
+					text_class: "title_bar";
+				}
+				visible: 0;
+			}
+
+			description { 
+				state: "default" 0.1; 
+				inherit: "default" 0.0;
+				visible: 1;
+			}
+		}
+		BORDER("top-right-over", 6 23, 6 23, 1.0 0.0, 0 22, 1.0 0.0, -6 0, "bd_top_right_overs.png", 1.0 1.0, 1.0 0.0, -5 23)
+		BORDER3("top-center-over", 5 23, 9999 23, "top-left", 1.0 0.5, 0 0, "top-right", 0.0 0.5, -1 -2, "bd_top_over.png", 1.0 1.0, 0.0 1.0, -1 -2)
+
+		MOVE_WINDOW("move-window", 1 22, 9999 22, "top-left", 0.0 0.0, 5 2, "top-right", 1.0 1.0, -7 -1, 255 0 0 0)
+		PART_EVENT_MAP("e.event.resize.t", 0, "resize_t")
+		PART_EVENT_MAP("e.event.titlebar", 0, "move-window")
+		PART_EVENT_MAP("e.event.resize.r", 0, "right-border")
+		PART_EVENT_MAP("e.event.resize.l", 0, "left-border")
+		PART_EVENT_MAP("e.event.resize.br", 0, "bottom-right")
+		PART_EVENT_MAP("e.event.resize.bl", 0, "bottom-left")
+		PART_EVENT_MAP("e.event.resize.b", 0, "bottom-center")
+		PART_EVENT_MAP("e.event.resize.tr", 0, "top-right")
+		PART_EVENT_MAP("e.event.resize.tl", 0, "top-left")		
+		CLIPS("close-clip", 20 18, 20 18, "top-left", 0.0 0.0, 0 0, 0.0 1.0, 30 -8)
+		CLIPS("max-clip", 20 18, 20 18, "close-clip", 1.0 0.0, 0 0, 0.0 1.0, 30 -1)
+		CLIPS("min-clip", 20 18, 20 18, "max-clip", 1.0 0.0, 0 0, 0.0 1.0, 30 -1)
+		BUTTONS("button-close", "close-clip", 15 15, "close-clip", "bd_button_close_unfocused.png")
+		BUTTONS("button-max", "max-clip", 15 15, "max-clip", "bd_button_max_unfocused.png")
+		BUTTONS("button-min", "min-clip", 15 15, "min-clip", "bd_button_min_unfocused.png")
+		PART_EVENT_MAP("e.event.close", 1, "button-close")
+		PART_EVENT_MAP("e.event.maximize", 1, "button-max")
+		PART_EVENT_MAP("e.event.minimize", 1, "button-min")
+		RESIZE_TOP("resize_t", 1 2, 9999 2, "top-left", 0.0 0.0, 0 0, "top-right", 0.0 0.0, -1 0, 255 0 0 0)
+		part { name: "text_alt";
+			type: TEXT;
+			effect: SOFT_SHADOW BOTTOM;
+			mouse_events: 0;
+			clip_to: "title2_rect";
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				color: 255 255 255 255;
+				color3: 255 255 255 255;
+				color_class: "border_title_active";
+				rel1 {
+					to: "e.text.title";
+				}
+
+				rel2 {
+					to: "e.text.title";
+				}
+				text {
+					text_source: "e.text.title";
+					font: "Sans";
+					size: 10;
+					min: 0 1;
+					align: 0.5 0.5;
+					text_class: "title_bar_alt";
+				}
+				visible: 1;
+			}
+
+			description { 
+				state: "default" 0.1; 
+				inherit: "default" 0.0;
+				color: 0 0 0 0;
+				visible: 0;
+			} 
+		}
+		part { name: "title2_rect";
+			type: RECT;
+			mouse_events: 0;
+			description {
+				state: "default" 0.0;
+				rel1.to: "top-center-over";
+				rel2.to: "top-center-over";
+			}
+		}
+		E_SWALLOW_ICON("e.swallow.icon", "e.event.icon") 
+		E_EVENT_ICON("e.event.icon", "title.area.clip", "title.area.clip")
+	}
+
+	programs {
+		BORDER_DEFAULT_PROGRAMS()
+	}
+}
+
+group {
+	name: "e/widgets/border/noresize_dialog/border";
+	alias: "e/widgets/border/modal/border";
+	//alias: "e/widgets/border/wm_app/border";
+
+	data {
+		item: "shadow" "1";
+	}
+
+	parts {
+		SHADOW_PART("top-left", -9 -10, "bottom-right", 9 10)
+		BORDER("top-left", 6 23, 6 23, 0.0 0.0, 3 22, 0.0 0.0, 3 0, "bd_top_left.png", 0.0 0.0, 0.0 0.0, 3 22)
+		BORDER("top-right", 6 23, 6 23, 1.0 0.0, 0 22, 1.0 0.0, -6 0, "bd_top_right.png", 1.0 0.0, 1.0 0.0, 0 22)
+		BORDER4("bottom-left", 5 5, 5 5, 0.0 1.0, 3 -6, 0.0 1.0, 3 0, "bd_bottom_left.png", 0.0 1.0, 0.0 1.0, 5 -6, 1 5)
+		BORDER4("bottom-right", 5 5, 5 5, 1.0 1.0, 0 -6, 1.0 1.0, -6 0, "bd_bottom_right.png", 1.0 1.0, 1.0 1.0, 0 -6, 1 5)
+		BORDER2("left-border", "top-left", 0.0 1.0, 0 0, "bottom-left", 0.0 0.0, 0 0)
+		BORDER2("right-border", "top-right", 1.0 1.0, -1 0, "bottom-right", 1.0 0.0, 0 0 )
+		BORDER3("top-center", 5 23, 9999 23, "top-left", 1.0 0.5, 0 0, "top-right", 0.0 0.5, -1 -2, "bd_top.png", 1.0 0.5, 0.0 0.5, 0 0)
+		BORDER3("bottom-center", 5 5, 9999 5, "bottom-left", 1.0 1.0, 0 -6, "bottom-right", 0.0 1.0, -1 0, "bd_bottom.png", 1.0 1.0, 0.0 1.0, 0 -6)
+		E_SWALLOW_CLIENT("e.swallow.client", "top-left", 0.0 1.0, 1 0, "bottom-right", 1.0 1.0, -2 -6)
+		TITLE_CLIP("title.area.clip", 1 20, "close-clip", 1.0 0.5, 10 0, "top-right", 1.0 0.5, -30 0, 255 255 255 255)
+		part { 	name: "e.text.title";
+			type: TEXT;
+			effect: SOFT_SHADOW BOTTOM;
+			mouse_events: 0;
+			clip_to: "title.area.clip";
+			scale: 1;
+
+			description {
+				state: "default" 0.0;
+				color: 255 255 255 255;
+				color3: 255 255 255 255;
+				color_class: "border_title";
+				rel1 {
+					to: "title.area.clip";
+					relative: 0.0 0.5;
+					offset: 0 4; 
+				}
+
+				rel2 { 
+					to: "title.area.clip";
+					relative: 1.0 0.5; 
+					offset: -5 0;
+				}
+
+				text {
+					text: "";
+					font: "Sans";
+					size: 10;
+					min: 0 1;
+					align: 0.5 0.5;
+					text_class: "title_bar";
+				}
+				visible: 0;
+			}
+
+			description { 
+				state: "default" 0.1; 
+				inherit: "default" 0.0;
+				visible: 1;
+			}
+		}
+		BORDER("top-right-over", 6 23, 6 23, 1.0 0.0, 0 22, 1.0 0.0, -6 0, "bd_top_right_over.png", 1.0 1.0, 1.0 0.0, -5 23)
+		BORDER3("top-center-over", 5 23, 9999 23, "top-left", 1.0 0.5, 0 0, "top-right", 0.0 0.5, -1 -2, "bd_top_overm.png", 1.0 1.0, 0.0 1.0, -1 -2)
+
+		MOVE_WINDOW("move-window", 1 22, 9999 22, "top-left", 0.0 0.0, 5 2, "top-right", 1.0 1.0, -7 -1, 255 0 0 0)
+		PART_EVENT_MAP("e.event.titlebar", 1, "move-window")		
+		CLIPS("close-clip", 20 18, 20 18, "top-left", 0.0 0.0, 0 0, 0.0 1.0, 30 -8)
+		BUTTONS("button-close", "close-clip", 15 15, "close-clip", "bd_button_close_unfocused.png")
+		PART_EVENT_MAP("e.event.close", 1, "button-close")
+		part { 														
+			name: "text_alt";
+			type: TEXT;
+			effect: SOFT_SHADOW BOTTOM;
+			mouse_events: 0;
+			clip_to: "title2_rect";
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				color: 255 255 255 255;
+				color3: 255 255 255 255;
+				color_class: "border_title_active";
+				rel1 {
+					to: "e.text.title";
+				}
+
+				rel2 {
+					to: "e.text.title";
+				}
+				text {
+					text_source: "e.text.title";
+					font: "Sans";
+					size: 10;
+					min: 0 1;
+					align: 0.5 0.5;
+					text_class: "title_bar_alt";
+				}
+				visible: 1;
+			}
+
+			description { 
+				state: "default" 0.1; 
+				inherit: "default" 0.0;
+				color: 0 0 0 0;
+				visible: 0;
+			} 
+		}
+		part { name: "title2_rect";
+			type: RECT;
+			mouse_events: 0;
+			description {
+				state: "default" 0.0;
+				rel1.to: "top-center-over";
+				rel2.to: "top-center-over";
+			}
+		}
+		E_SWALLOW_ICON("e.swallow.icon", "e.event.icon") 
+		E_EVENT_ICON("e.event.icon", "title.area.clip", "title.area.clip")
+	}
+
+	programs {
+		BORDER_int_PROGRAMS()
+	}
+}
+
+group {
+	name: "e/widgets/border/dialog/border";
+	alias: "e/widgets/border/noresize/border";
+
+	data {
+		item: "shadow" "1";
+	}
+
+	parts {
+		SHADOW_PART("top-left", -9 -10, "bottom-right", 9 10)
+		BORDER("top-left", 6 23, 6 23, 0.0 0.0, 3 22, 0.0 0.0, 3 0, "bd_top_left.png", 0.0 0.0, 0.0 0.0, 3 22)
+		BORDER("top-right", 6 23, 6 23, 1.0 0.0, 0 22, 1.0 0.0, -6 0, "bd_top_right.png", 1.0 0.0, 1.0 0.0, 0 22)
+		BORDER4("bottom-left", 5 5, 5 5, 0.0 1.0, 3 -6, 0.0 1.0, 3 0, "bd_bottom_left.png", 0.0 1.0, 0.0 1.0, 5 -6, 1 5)
+		BORDER4("bottom-right", 5 5, 5 5, 1.0 1.0, 0 -6, 1.0 1.0, -6 0, "bd_bottom_right.png", 1.0 1.0, 1.0 1.0, 0 -6, 1 5)
+		BORDER2("left-border", "top-left", 0.0 1.0, 0 0, "bottom-left", 0.0 0.0, 0 0)
+		BORDER2("right-border", "top-right", 1.0 1.0, -1 0, "bottom-right", 1.0 0.0, 0 0 )
+		BORDER3("top-center", 5 23, 9999 23, "top-left", 1.0 0.5, 0 0, "top-right", 0.0 0.5, -1 -2, "bd_top.png", 1.0 0.5, 0.0 0.5, 0 0)
+		BORDER3("bottom-center", 5 5, 9999 5, "bottom-left", 1.0 1.0, 0 -6, "bottom-right", 0.0 1.0, -1 0, "bd_bottom.png", 1.0 1.0, 0.0 1.0, 0 -6)
+		E_SWALLOW_CLIENT("e.swallow.client", "top-left", 0.0 1.0, 1 0, "bottom-right", 1.0 1.0, -2 -6)
+		TITLE_CLIP("title.area.clip", 1 20, "close-clip", 1.0 0.5, 10 0, "top-right", 1.0 0.5, -30 0, 255 255 255 255)
+		part { 	name: "e.text.title";
+			type: TEXT;
+			effect: SOFT_SHADOW BOTTOM;
+			mouse_events: 0;
+			clip_to: "title.area.clip";
+			scale: 1;
+
+			description {
+				state: "default" 0.0;
+				color: 255 255 255 255;
+				color3: 255 255 255 255;
+				color_class: "border_title";
+				rel1 {
+					to: "title.area.clip";
+					relative: 0.0 0.5;
+					offset: 0 4; 
+				}
+
+				rel2 { 
+					to: "title.area.clip";
+					relative: 1.0 0.5; 
+					offset: -5 0;
+				}
+
+				text {
+					text: "";
+					font: "Sans";
+					size: 10;
+					min: 0 1;
+					align: 0.5 0.5;
+					text_class: "title_bar";
+				}
+				visible: 0;
+			}
+
+			description { 
+				state: "default" 0.1; 
+				inherit: "default" 0.0;
+				visible: 1;
+			}
+		}
+		BORDER("top-right-over", 6 23, 6 23, 1.0 0.0, 0 22, 1.0 0.0, -6 0, "bd_top_right_over.png", 1.0 1.0, 1.0 0.0, -5 23)
+		BORDER3("top-center-over", 5 23, 9999 23, "top-left", 1.0 0.5, 0 0, "top-right", 0.0 0.5, -1 -2, "bd_top_overm.png", 1.0 1.0, 0.0 1.0, -1 -2)
+
+		MOVE_WINDOW("move-window", 1 22, 9999 22, "top-left", 0.0 0.0, 5 2, "top-right", 1.0 1.0, -7 -1, 255 0 0 0)
+		PART_EVENT_MAP("e.event.resize.t", 0, "resize_t")
+		PART_EVENT_MAP("e.event.titlebar", 0, "move-window")
+		PART_EVENT_MAP("e.event.resize.r", 0, "right-border")
+		PART_EVENT_MAP("e.event.resize.l", 0, "left-border")
+		PART_EVENT_MAP("e.event.resize.br",0, "bottom-right")
+		PART_EVENT_MAP("e.event.resize.bl", 0, "bottom-left")
+		PART_EVENT_MAP("e.event.resize.b", 0, "bottom-center")
+		PART_EVENT_MAP("e.event.resize.tr", 0, "top-right")
+		PART_EVENT_MAP("e.event.resize.tl", 0, "top-left")		
+		CLIPS("close-clip", 20 18, 20 18, "top-left", 0.0 0.0, 0 0, 0.0 1.0, 30 -8)
+		BUTTONS("button-close", "close-clip", 15 15, "close-clip", "bd_button_close_unfocused.png")
+		PART_EVENT_MAP("e.event.close", 1, "button-close")
+		RESIZE_TOP("resize_t", 1 2, 9999 2, "top-left", 0.0 0.0, 0 0, "top-right", 0.0 0.0, -1 0, 255 0 0 0)
+		part { 														
+			name: "text_alt";
+			type: TEXT;
+			effect: SOFT_SHADOW BOTTOM;
+			mouse_events: 0;
+			clip_to: "title2_rect";
+			scale: 1;
+			description {
+				state: "default" 0.0;
+				color: 255 255 255 255;
+				color3: 255 255 255 255;
+				color_class: "border_title_active";
+				rel1 {
+					to: "e.text.title";
+				}
+
+				rel2 {
+					to: "e.text.title";
+				}
+				text {
+					text_source: "e.text.title";
+					font: "Sans";
+					size: 10;
+					min: 0 1;
+					align: 0.5 0.5;
+					text_class: "title_bar_alt";
+				}
+				visible: 1;
+			}
+
+			description { 
+				state: "default" 0.1; 
+				inherit: "default" 0.0;
+				color: 0 0 0 0;
+				visible: 0;
+			} 
+		}
+		part { name: "title2_rect";
+			type: RECT;
+			mouse_events: 0;
+			description {
+				state: "default" 0.0;
+				rel1.to: "top-center-over";
+				rel2.to: "top-center-over";
+			}
+		}
+		E_SWALLOW_ICON("e.swallow.icon", "e.event.icon") 
+		E_EVENT_ICON("e.event.icon", "title.area.clip", "title.area.clip")
+	}
+
+	programs {
+		BORDER_int_PROGRAMS()
+	}
+}
+
+group { name: "e/widgets/border/pixel/border";
+   parts {
+      part { name: "client_clip"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.to_y: "e.swallow.client";
+            rel2.to_y: "e.swallow.client";
+         }
+      }
+      part { name: "e.swallow.client"; type: SWALLOW;
+         description { state: "default" 0.0;
+            rel1.offset: 1 1;
+            rel2.offset: -2 -2;
+         }
+      }
+      part { name: "top"; type: RECT;
+         description { state: "default" 0.0;
+            color: 0 0 0 255;
+            align: 0.0 0.0;
+            max: 99999 1;
+         }
+         description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+			color_class: "focus";
+         }
+      }
+      part { name: "bottom"; type: RECT;
+         description { state: "default" 0.0;
+            color: 0 0 0 255;
+            align: 0.0 1.0;
+            max: 99999 1;
+         }
+         description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+			color_class: "focus";
+         }
+      }
+      part { name: "left"; type: RECT;
+         description { state: "default" 0.0;
+            color: 0 0 0 255;
+            align: 0.0 0.0;
+            max: 1 99999;
+         }
+         description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+			color_class: "focus";
+         }
+      }
+      part { name: "right"; type: RECT;
+         description { state: "default" 0.0;
+            color: 0 0 0 255;
+            align: 1.0 0.0;
+            max: 1 99999;
+         }
+         description { state: "focused" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+			color_class: "focus";
+         }
+      }
+      part { name: "e.event.resize.tl"; type: RECT;
+         description { state: "default" 0.0;
+            rel2.relative: 0.0 0.0;
+            min: 32 4;
+            align: 0.0 0.0;
+            color: 0 0 0 0;
+         }
+      }
+      part { name: "e.event.resize.t"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 0.0;
+            rel1.to_x: "e.event.resize.tl";
+            rel2.relative: 0.0 0.0;
+            rel2.to_x: "e.event.resize.tr";
+            min: 0 4;
+            align: 0.5 0.0;
+            color: 0 0 0 0;
+         }
+      }
+      part { name: "e.event.resize.tr"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 0.0;
+            rel2.relative: 1.0 0.0;
+            min: 32 4;
+            align: 1.0 0.0;
+            color: 0 0 0 0;
+         }
+      }
+      part { name: "e.event.resize.bl"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.relative: 0.0 1.0;
+            rel2.relative: 0.0 1.0;
+            min: 32 5;
+            align: 0.0 1.0;
+            color: 0 0 0 0;
+            fixed: 1 1;
+         }
+      }
+      part { name: "e.event.resize.b"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 1.0;
+            rel1.to_x: "e.event.resize.tl";
+            rel2.relative: 0.0 1.0;
+            rel2.to_x: "e.event.resize.tr";
+            min: 0 5;
+            align: 0.5 1.0;
+            color: 0 0 0 0;
+            fixed: 0 1;
+         }
+      }
+      part { name: "e.event.resize.br"; type: RECT;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 1.0;
+            rel2.relative: 1.0 1.0;
+            min: 32 5;
+            align: 1.0 1.0;
+            color: 0 0 0 0;
+            fixed: 1 1;
+         }
+      }
+   }
+   programs {
+      program {
+         signal: "e,state,focused"; source: "e";
+         action: STATE_SET "focused" 0.0;
+         target: "top";
+         target: "bottom";
+         target: "left";
+         target: "right";
+      }
+      program {
+         signal: "e,state,unfocused"; source: "e";
+         action: STATE_SET "default" 0.0;
+         target: "top";
+         target: "bottom";
+         target: "left";
+         target: "right";
+      }
+   }
+}

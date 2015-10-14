@@ -1,0 +1,202 @@
+/*	This file contains the code for the animated and the static background
+ *	of the Morning Sunshint theme, so users can choose if spend more memory
+ *	for animated background (the original written) or keep the static one. */
+
+#define BACKGROUND_LIGHT												\
+   images.image: "Morning_light.png" COMP;								\
+   data {item: "style" "4";												\
+	item: "noanimation" "1";											\
+		}																\
+   parts {																\
+      part { name: "bg"; mouse_events: 0;								\
+         description { state: "default" 0.0;							\
+            image.normal: "Morning_light.png";							\
+            image.scale_hint: STATIC;									\
+         }																\
+      }																	\
+   }
+				
+				
+				
+#define BACKGROUND_ANIMATED												\
+		images {														\
+			image: "wp_bottom.png" COMP;								\
+			image: "wp_far.png" COMP;									\
+			image: "wp_logo_overlay.png" COMP;							\
+			image: "wp_logo_overlay2.png" COMP;							\
+			image: "wp_shades.png" COMP;								\
+			image: "wp_shades_left.png" COMP;							\
+			image: "wp_slogan.png" COMP;								\
+			image: "wp_top.png" COMP;									\
+		}																\
+		script {														\
+			public mytimer = 0;											\
+			public start_timer(func[]) {								\
+				new local_timer = timer(60.0, func, 1);					\
+				set_int(mytimer, local_timer);							\
+			}															\
+			public event_logo_prog(s) {									\
+				run_program(PROGRAM:"event_logo2");						\
+				start_timer("event_logo_prog");							\
+			}															\
+		}																\
+		parts {															\
+			part { name: "background";									\
+				type: RECT;												\
+				description { state: "default" 0.0;						\
+					color: 255 255 255 255;								\
+				}														\
+			}															\
+			part { name: "background_top";								\
+				description { state: "default" 0.0;						\
+					image.normal: "wp_top.png";							\
+					rel2.to: "background";								\
+					rel2.relative: 1.0 0.55;							\
+				}														\
+			}															\
+			part { name: "background_far";								\
+				description { state: "default" 0.0;						\
+					image.normal: "wp_far.png";							\
+					rel1.to: "background";								\
+					rel2.to: "background";								\
+					rel1.relative: 0.0 0.47;							\
+					rel2.relative: 0.5 0.57;							\
+				}														\
+			}															\
+			part { name: "background_shades_left";						\
+				description { state: "default" 0.0;						\
+					image.normal: "wp_shades_left.png";					\
+					rel2.to: "background";								\
+					rel2.relative: 0.6 0.75;							\
+				}														\
+			}															\
+			part { name: "background_shades_right";						\
+				description { state: "default" 0.0;						\
+					image.normal: "wp_shades.png";						\
+					rel1.to: "background";								\
+					rel2.to: "background";								\
+					rel1.relative: 0.4 0.0;								\
+					rel2.relative: 1.0 0.75;							\
+				}														\
+			}															\
+			part { name: "background_logo_overlay";						\
+				description { state: "default" 0.0;						\
+					aspect: 1 1;										\
+					aspect_preference: HORIZONTAL;						\
+					image.normal: "wp_logo_overlay.png";				\
+					rel1.to: "background";								\
+					rel2.to: "background";								\
+					rel1.relative: 0.2 0.0;								\
+					rel2.relative: 0.9 0.6;								\
+					color: 255 255 255 255;								\
+				}														\
+				description { state: "shiny" 0.0;						\
+					inherit: "default" 0.0;								\
+					color: 255 255 255 0;								\
+				}														\
+			}															\
+			part { name: "background_logo_overlay2";					\
+				description { state: "default" 0.0;						\
+					aspect: 1 1;										\
+					aspect_preference: HORIZONTAL;						\
+					image.normal: "wp_logo_overlay2.png";				\
+					rel1.to: "background";								\
+					rel2.to: "background";								\
+					rel1.relative: 0.2 0.0;								\
+					rel2.relative: 0.9 0.6;								\
+					color: 255 255 255 0;								\
+				}														\
+				description { state: "shiny" 0.0;						\
+					inherit: "default" 0.0;								\
+					color: 255 255 255 255;								\
+				}							\
+			}							\
+			part { name: "background_bottom";							\
+				description { state: "default" 0.0;							\
+					image.normal: "wp_bottom.png";							\
+					rel1.to: "background";							\
+					rel1.relative: 0.0 0.42;							\
+				}							\
+			}							\
+			part { name: "background_slogan";							\
+				description { state: "default" 0.0;							\
+					aspect: 1 1;							\
+					aspect_preference: BOTH;							\
+					image.normal: "wp_slogan.png";							\
+					rel1.to: "background_top";							\
+					rel2.to: "background_top";							\
+					rel1.relative: 0.45 0.62;							\
+					rel2.relative: 0.58 1.0;							\
+					color: 255 255 255 0;							\
+				}							\
+				description { state: "visible" 0.0;							\
+					inherit: "default" 0.0;							\
+					color: 255 255 255 255;							\
+				}							\
+			}							\
+			part { name: "background_slogan_events";							\
+				type: RECT;							\
+				mouse_events: 1;							\
+				description { state: "default" 0.0;							\
+					rel1.to: "background_slogan";							\
+					rel2.to: "background_slogan";							\
+					rel1.relative: 0.0 0.37;							\
+					rel2.relative: 1.0 0.63;							\
+					visible: 1;							\
+					color: 255 255 255 0;							\
+				}							\
+			}							\
+		}							\
+		programs {							\
+			program {							\
+				name: "init";							\
+				signal: "load";							\
+				source: "*";							\
+				script {							\
+					start_timer("event_logo_prog");							\
+				}							\
+			}							\
+			program { name: "event_slogan_in";							\
+				signal: "mouse,in";							\
+				source: "background_slogan_events";							\
+				action: STATE_SET "visible" 0.0;							\
+				transition: LINEAR 1.0;							\
+				target: "background_slogan";							\
+			}							\
+			program { name: "event_slogan_out";							\
+				signal: "mouse,out";							\
+				source: "background_slogan_events";							\
+				action: STATE_SET "default" 0.0;							\
+				transition: LINEAR 1.0;							\
+				target: "background_slogan";							\
+			}							\
+			program { name: "event_logo";							\
+				signal: "";							\
+				source: "";							\
+				action: STATE_SET "shiny" 0.0;							\
+				target: "background_logo_overlay";							\
+				after: "event_logo2";							\
+			}							\
+			program { name: "event_logo2";							\
+				signal: "";							\
+				source: "";							\
+				action: STATE_SET "shiny" 0.0;							\
+				transition: LINEAR 1.0;							\
+				target: "background_logo_overlay2";							\
+				after: "event_logo3";							\
+			}							\
+			program { name: "event_logo3";							\
+				signal: "";							\
+				source: "";							\
+				action: STATE_SET "default" 0.0;							\
+				transition: LINEAR 1.0;							\
+				target: "background_logo_overlay2";							\
+				after: "event_logo4";							\
+			}							\
+			program { name: "event_logo4";							\
+				signal: "";							\
+				source: "";							\
+				action: STATE_SET "default" 0.0;							\
+				target: "background_logo_overlay";							\
+			}															\
+		}																\

@@ -1,0 +1,125 @@
+style "tab" 
+{	ythickness	= 6
+
+	engine "pixmap"
+	{
+		image
+		{
+			function	= BOX_GAP
+		}
+		
+		image
+		{
+			function	= FOCUS
+		}
+		image 
+		{
+			function	= EXTENSION
+			recolorable	= TRUE
+			state		= ACTIVE
+			file		= "Images/Tabs/back-bottom.png"
+			border		= { 8, 8, 5, 6}
+			stretch		= TRUE
+			gap_side	= TOP
+		}
+
+		image 
+		{
+			function	= EXTENSION
+			recolorable	= TRUE
+			state		= ACTIVE
+			file		= "Images/Tabs/back.png"
+			border		= { 8, 8, 6, 5}
+			stretch		= TRUE
+			gap_side	= BOTTOM
+		}
+
+		image 
+		{
+			function	= EXTENSION
+			recolorable	= TRUE
+			state		= ACTIVE
+			file		= "Images/Tabs/back-left.png"
+			border		= { 8, 8, 6, 5}
+			stretch		= TRUE
+			gap_side	= LEFT
+		}
+
+		image 
+		{
+			function	= EXTENSION
+			recolorable	= TRUE
+			state		= ACTIVE
+			file		= "Images/Tabs/back-right.png"
+			border		= { 6, 5, 8, 8}
+			stretch		= TRUE
+			gap_side	= RIGHT
+		}
+
+		image 
+		{
+			function	= EXTENSION
+			recolorable	= TRUE
+			file		= "Images/Tabs/sel-right.png"
+			border		= { 10, 10, 10, 10}
+			stretch		= TRUE
+			gap_side	= RIGHT
+		}
+
+		image 
+		{
+			function	= EXTENSION
+			recolorable	= TRUE
+			file		= "Images/Tabs/sel-left.png"
+			border		= { 10, 10, 10, 10}
+			stretch		= TRUE
+			gap_side	= LEFT
+		}
+		image 
+		{
+			function	= EXTENSION
+			recolorable	= TRUE
+			file		= "Images/Tabs/sel-bottom.png"
+			border		= { 10, 10, 10, 10}
+			stretch		= TRUE
+			gap_side	= TOP
+		}
+		image 
+		{
+			function	= EXTENSION
+			recolorable	= TRUE
+			file		= "Images/Tabs/sel.png"
+			border		= { 10, 10, 10, 10}
+			stretch		= TRUE
+			gap_side	= BOTTOM
+		}
+		image
+		{	function	= ARROW
+			file		= "Images/Tabs/right.png"
+			arrow_direction	= RIGHT
+		}
+
+		image
+		{	function	= ARROW
+			file		= "Images/Tabs/left.png"
+			arrow_direction	= LEFT
+		}
+	}
+}
+
+style "tabtext" = "default"
+{	
+
+	fg[ACTIVE]       	= @fg_tabcolor
+	fg[NORMAL]		= @fg_selected_tabcolor
+
+}
+
+widget_class "*<GtkNotebook>*.*<GtkLabel>"			style "tabtext"
+widget_class "*<GtkNotebook>.*.*.<GtkLabel>"			style "default"
+widget_class "*.<GtkNotebook>.*<GtkEventBox>*<GtkLabel>" 	style "tabtext"
+
+##Lxappearance preview fix
+widget_class "*GtkNotebook.GtkHBox.GtkFrame.GtkAlignment.GtkVBox.GtkRadioButton.GtkLabel"		style "default"
+widget_class "*GtkNotebook.GtkHBox.GtkFrame.GtkLabel"							style "default"
+widget_class "*GtkNotebook.GtkHBox.GtkVBox.GtkFrame.GtkEventBox.GtkEventBox.GtkVBox.GtkMenuBar.*"	style "default"

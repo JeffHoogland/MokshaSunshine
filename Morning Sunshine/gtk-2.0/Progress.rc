@@ -1,0 +1,47 @@
+style "progress"
+{
+	fg[PRELIGHT]	= @fg_color
+
+	engine "pixmap"
+	{
+		image
+		{
+			function	= BOX
+			detail		= "trough"
+			file		= "Images/Progressbars/boxH.png"
+			border		= {8, 8, 8, 8}
+			stretch		= TRUE
+			orientation	= HORIZONTAL
+		}
+		image
+		{
+			function	= BOX
+			detail		= "trough"
+			file		= "Images/Progressbars/boxV.png"
+			border		= {8, 8, 8, 8}
+			stretch		= TRUE
+			orientation	= VERTICAL
+		}
+
+		image
+		{
+			function	= BOX
+			detail		= "bar"
+			file		= "Images/Progressbars/barH.png"
+			border		= {4,4,4,4}
+			stretch		= TRUE
+			orientation	= HORIZONTAL
+		}
+		
+		image
+		{
+			function	= BOX
+			detail		= "bar"
+			file		= "Images/Progressbars/barV.png"
+			border		= {4,4,4,4}
+			stretch		= TRUE
+			orientation	= VERTICAL
+		}
+	}
+
+}

@@ -1,0 +1,247 @@
+style "menubar" = "default"
+{
+	font_name		= "Bold"
+
+	fg[SELECTED]	= @selected_fg_color
+	fg[PRELIGHT]	= @selected_fg_color
+
+	engine "pixmap"
+	{
+
+		image
+		{
+			function	= SHADOW
+		}
+
+		image
+		{
+			function	= BOX
+			file		= "Images/Menu/focus.png"
+			border		= {5, 5, 5, 5}
+			stretch		= TRUE
+			state		= PRELIGHT
+			recolorable	= TRUE
+		}
+
+		image
+		{
+			function	= BOX
+			file		= "Images/null.png"
+			stretch		= TRUE
+			state		= NORMAL
+			recolorable	= TRUE
+		}
+
+		image
+		{
+			function	= BOX
+			file		= "Images/null.png"
+			stretch		= TRUE
+			state		= ACTIVE
+			recolorable	= TRUE
+		}
+		image
+		{
+			function	= BOX
+			file		= "Images/null.png"
+			stretch		= TRUE
+			state		= INSENSITIVE
+			recolorable	= TRUE
+		}
+	}
+}
+
+style "menu"
+{	
+	engine "pixmap"
+	{
+		image
+		{
+			function	= BOX
+			file		= "Images/Menu/menu.png"
+			border		= {4,4,4,4}
+			stretch		= TRUE
+		}
+	}
+}
+
+style "menuitem"
+{
+	xthickness	= 0
+        ythickness	= 0
+
+	fg[PRELIGHT]	= @selected_fg_color
+
+	engine "pixmap"
+	{
+		image
+		{	function	= BOX
+			file		= "Images/Menu/select.png"
+			border		= {3,3,3,3}
+			stretch		= TRUE
+		}
+
+		image
+		{
+			function	= OPTION
+			recolorable	= TRUE
+            		state		= NORMAL
+            		shadow		= OUT
+            		overlay_file	= "Images/CheckRadio/radio1.png"
+            		overlay_stretch	= FALSE
+        	}
+
+		image
+		{
+			function	= OPTION
+			recolorable	= TRUE
+            		state		= PRELIGHT
+            		shadow		= OUT
+            		overlay_file	= "Images/CheckRadio/radio1.png"
+            		overlay_stretch	= FALSE
+        	}
+		
+		image
+		{
+			function	= OPTION
+			recolorable	= TRUE
+            		state		= ACTIVE
+            		shadow		= OUT
+            		overlay_file	= "Images/CheckRadio/radio1.png"
+            		overlay_stretch	= FALSE
+        	}
+
+		image
+		{
+			function	= OPTION
+			recolorable	= TRUE
+            		state		= INSENSITIVE
+            		shadow		= OUT
+            		overlay_file	= "Images/CheckRadio/radio0.png"
+            		overlay_stretch	= FALSE
+        	}
+		
+		image
+		{
+			function	= OPTION
+			recolorable	= TRUE
+            		state		= NORMAL
+            		shadow		= IN
+            		overlay_file	= "Images/CheckRadio/radio2.png"
+            		overlay_stretch	= FALSE
+        	}
+
+		image
+		{
+			function	= OPTION
+			recolorable	= TRUE
+            		state		= PRELIGHT
+            		shadow		= IN
+            		overlay_file	= "Images/CheckRadio/radio2.png"
+            		overlay_stretch	= FALSE
+        	}
+		
+		image
+		{
+			function	= OPTION
+			recolorable	= TRUE
+            		state		= ACTIVE
+            		shadow		= IN
+            		overlay_file	= "Images/CheckRadio/radio2.png"
+            		overlay_stretch	= FALSE
+        	}
+
+		image
+		{
+			function	= OPTION
+			recolorable	= TRUE
+            		state		= INSENSITIVE
+            		shadow		= IN
+            		overlay_file	= "Images/CheckRadio/radio2.png"
+            		overlay_stretch	= FALSE
+        	}
+
+		image 
+		{
+			function	= CHECK
+	    		recolorable	= TRUE
+			state		= NORMAL
+			shadow		= OUT
+	    		overlay_file	= "Images/CheckRadio/check1.png"
+			overlay_stretch	= FALSE
+		}
+
+		image
+		{
+			function	= CHECK
+	    		recolorable	= TRUE
+			state		= ACTIVE
+			shadow		= OUT
+	    		overlay_file	= "Images/CheckRadio/check1.png"
+			overlay_stretch	= FALSE
+		}
+
+		image
+		{
+			function	= CHECK
+	    		recolorable	= TRUE
+			state		= PRELIGHT
+			shadow		= OUT
+	    		overlay_file	= "Images/CheckRadio/check1.png"
+			overlay_stretch	= FALSE
+		}
+
+		image
+		{
+			function	= CHECK
+	    		recolorable	= TRUE
+			state		= INSENSITIVE
+			shadow		= OUT
+	    		overlay_file	= "Images/CheckRadio/check0.png"
+			overlay_stretch	= FALSE
+		}
+
+		image 
+		{
+			function	= CHECK
+	    		recolorable	= TRUE
+			state		= NORMAL
+			shadow		= IN
+	    		overlay_file	= "Images/CheckRadio/check2.png"
+			overlay_stretch	= FALSE
+		}
+
+		image
+		{
+			function	= CHECK
+	    		recolorable	= TRUE
+			state		= ACTIVE
+			shadow		= IN
+	    		overlay_file	= "Images/CheckRadio/check2.png"
+			overlay_stretch	= FALSE
+		}
+
+		image
+		{
+			function	= CHECK
+	    		recolorable	= TRUE
+			state		= PRELIGHT
+			shadow		= IN
+	    		overlay_file	= "Images/CheckRadio/check2.png"
+			overlay_stretch	= FALSE
+		}
+
+		image
+		{
+			function	= CHECK
+	    		recolorable	= TRUE
+			state		= INSENSITIVE
+			shadow		= IN
+	    		overlay_file	= "Images/CheckRadio/check2.png"
+			overlay_stretch	= FALSE
+		}
+	
+	}
+}
+
+

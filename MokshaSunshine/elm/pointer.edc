@@ -1,0 +1,30 @@
+   group {
+      name: "elm/pointer/base/default";
+      inherit: "e/pointer/enlightenment/default/color";
+      parts {
+		part {
+            name: "elm.swallow.hotspot"; insert_after: "base";
+            /* this is a "fake" swallow part
+             * that is used by e to determine
+             * the pointer hotspot - or where
+             * the actual mouse events get
+             * reported from on the cursor */
+            type: SWALLOW;
+            description {
+               state: "default" 0.0;
+               visible: 0;
+               rel1 {
+                  /* the hotspot will scale with the cursor here */
+                  to: "base";
+                  //relative: 0.27 0.125;
+                  //offset: 0 0;
+               }
+               rel2 {
+                  to: "base";
+                  //relative: 0.27 0.125;
+                  //offset: 0 0;
+               }
+            }
+         }
+      }
+}

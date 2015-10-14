@@ -1,0 +1,59 @@
+style "button" = "default"
+{	
+	GtkButton	::inner-border	= {1,1,2,2}
+
+	fg[PRELIGHT]	= @fg_color
+	text[PRELIGHT]	= @fg_color
+
+	engine "pixmap"
+	{	
+		image
+		{
+			function	= VLINE
+			file		= "Images/null.png"
+			border		= {1, 1, 1, 1}
+		}
+
+		image
+		{
+			function	= FOCUS
+			file		= "Images/Buttons/focus.png"
+		}
+		image
+		{
+			function		= BOX
+			state			= NORMAL
+			file			= "Images/Buttons/button.png"
+			border			={ 8, 8, 8, 8 }
+			stretch			= TRUE
+		}
+
+		image
+		{
+			function		= BOX
+			state			= PRELIGHT
+			file			= "Images/Buttons/button-prelight.png"
+			border			= { 5, 5, 5, 5 }
+			stretch			= TRUE
+		}
+
+		image
+		{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Images/Buttons/button-pressed.png"
+			border			= { 5, 5, 5, 5 }
+			stretch			= TRUE
+		}
+
+		image
+		{
+			function		= BOX
+			state			= INSENSITIVE
+			file			= "Images/Buttons/button-ins.png"
+			border			={ 10, 10, 10, 10 }
+			stretch			= TRUE
+		}
+
+	}
+}
