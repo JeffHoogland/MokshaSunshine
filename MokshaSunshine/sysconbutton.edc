@@ -115,7 +115,7 @@ group
                   name: "button_clicked";
                   signal: "mouse,clicked,1";
                   source: "event";
-                  action: SIGNAL_EMIT "e,action,shutdown,show" "e";
+                  action: SIGNAL_EMIT "e,action,shutdown,show" "";
                }
           }
      }
