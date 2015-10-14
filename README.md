@@ -1,4 +1,4 @@
 # MokshaSunshine
 Moksha Theme
 
-![Current Image](http://i.imgur.com/6zkPnQh.jpg "Sunshine Theme")
+![Current Image](http://i.imgur.com/FjiPGlK.jpg "Sunshine Theme")
