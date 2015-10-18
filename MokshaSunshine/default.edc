@@ -84,6 +84,7 @@ collections { /* begin the collection of edje groups that are in this file */
 #include "notification.edc"
 #include "packagekit.edc"
 #include "randr.edc"
+#include "mokshapreview.edc"
 
 //ELM Support
 #include "elm/access.edc"
