@@ -729,7 +729,7 @@ group {
 				rel1 {
 					to: "title.area.clip";
 					relative: 0.0 0.5;
-					offset: 0 4; 
+					offset: 0 0; 
 				}
 
 				rel2 { 
