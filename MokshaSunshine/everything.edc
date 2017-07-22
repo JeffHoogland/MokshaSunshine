@@ -159,6 +159,7 @@
                   size: 12;
                   align: 0.0 0.5;
                   min: 1 1;
+                  ellipsis: -1;
                   text_class: "fileman_typebuf";
                }
             }
