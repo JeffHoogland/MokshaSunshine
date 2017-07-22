@@ -1529,6 +1529,7 @@ group { name: "e/pointer/enlightenment/rotate/color";
                text {
                   style: "dialog_style";
                   min: 1 1;
+                  ellipsis: -1;
                }
             }
          }
@@ -10689,6 +10690,7 @@ group { name: "e/widgets/entry/password";
 						min:		1 1;
 						align:			0.5 0.5;
 						text_class: "slider";
+						ellipsis: -1;
 					}
 				}
 			}
@@ -10944,11 +10946,12 @@ group { name: "e/widgets/entry/password";
 					color: 0 0 0 255;
 					color_class: "slider_text";
 					text { text:  "0.0";
-						font:			 "Sans";
-						size:			 10;
+						font:		"Sans";
+						size:		10;
 						min:		1 1;
-						align:			0.5 0.5;
+						align:		0.5 0.5;
 						text_class: "slider";
+						ellipsis: -1;
 					}
 				}
 			}
