@@ -694,15 +694,61 @@ group { name: "e/pointer/enlightenment/rotate/color";
 			program { name: "sb_left";
 				signal: "mouse,down,1";
 				source: "left_arrow";
-				action:  DRAG_VAL_STEP -1.0 0.0;
+				//~ action:  DRAG_VAL_STEP -1.0 0.0;
+				action: SIGNAL_EMIT "e,action,prev" "e";
 				target: "e.dragable.hbar";
+				after: "arrow1_repeat";
 			}
+			program { name: "arrow1_repeat";
+				action: SIGNAL_EMIT "e,action,prev" "e";
+				in: 0.3 0.0;
+				after: "arrow1_repeat";
+			}
+			program {
+				signal: "mouse,up,1"; source: "left_arrow";
+				action: ACTION_STOP;
+				target: "arrow1_repeat";
+			} 
+			program {
+				signal: "mouse,down,1*"; source: "left_arrow";
+				action: STATE_SET "clicked" 0.0;
+				target: "left_arrow";
+			}
+			program {
+				signal: "mouse,up,1"; source: "left_arrow";
+				action: STATE_SET "default" 0.0;
+				target: "left_arrow";
+			}
+			
 			program { name: "sb_right";
 				signal: "mouse,down,1";
 				source: "right_arrow";
-				action:  DRAG_VAL_STEP 1.0 0.0;
+				//~ action:  DRAG_VAL_STEP 8.0 0.0;
+				action: SIGNAL_EMIT "e,action,next" "e";
 				target: "e.dragable.hbar";
+				after: "arrow2_repeat";
 			}
+			program { name: "arrow2_repeat";
+				action: SIGNAL_EMIT "e,action,next" "e";
+				in: 0.3 0.0;
+				after: "arrow2_repeat";
+			}
+			program {
+				signal: "mouse,up,1"; source: "right_arrow";
+				action: ACTION_STOP;
+				target: "arrow2_repeat";
+			} 
+			program {
+				signal: "mouse,down,1*"; source: "right_arrow";
+				action: STATE_SET "clicked" 0.0;
+				target: "right_arrow";
+			}
+			program {
+				signal: "mouse,up,1"; source: "right_arrow";
+				action: STATE_SET "default" 0.0;
+				target: "right_arrow";
+			}
+			
 		}
 	}
 
