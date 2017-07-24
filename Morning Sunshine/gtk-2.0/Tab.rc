@@ -111,7 +111,7 @@ style "tabtext" = "default"
 {	
 
 	fg[ACTIVE]       	= @fg_tabcolor
-	fg[NORMAL]		= @fg_selected_tabcolor
+	fg[NORMAL]		= @fg_tabcolor
 
 }
 
