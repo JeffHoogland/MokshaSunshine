@@ -159,6 +159,7 @@
                   size: 12;
                   align: 0.0 0.5;
                   min: 1 1;
+                  ellipsis: -1;
                   text_class: "fileman_typebuf";
                }
             }
@@ -883,7 +884,7 @@
                fixed: 0 1;
                rel1.to: "clip";
                rel2.to: "clip";
-               rel1.offset: 5 3;
+               rel1.offset: 5 1;
                rel2.offset: -6 -1;
                visible: 0;
                color: 0 0 0 255;
@@ -1173,7 +1174,7 @@
                rel2 {
                   to: "base";
                   relative: 1.0 1.0;
-                  offset: -3  -13;
+                  offset: -3  -18;
                }
             }
          }
@@ -1235,14 +1236,14 @@
             description {
                state: "default" 0.0;
                rel1 {
-                  offset: 2 -12;
+                  offset: 2 -15;
                   relative: 0.0 1.0;
                }
                rel2.offset: -2 -10;
                color: 0 0 0 255;
                text {
                   font: "Sans";
-                  size: 11;
+                  size: 10;
                   min: 0 1;
                   align: 0.5 0.0;
                   text_class: "fileman_icon";
@@ -1252,7 +1253,7 @@
                state: "selected" 0.0;
 	       inherit: "default" 0.0;
                rel1 {
-                  offset: 2 -12;
+                  offset: 2 -15;
                   relative: 0.0 1.0;
                }
                rel2.offset: -2 -10;

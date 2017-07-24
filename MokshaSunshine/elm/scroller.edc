@@ -273,6 +273,13 @@ group { name: "elm/scroller/base/default";
             rel2.to: "sb_vbar_base";
             color: 0 0 0 0;
          }
+         description { state: "hidden" 0.0;
+            inherit: "default" 0.0;
+            min: 0 0;
+         }
+         description { state: "clicked" 0.0;
+            inherit: "default" 0.0;
+         }
       }
 	  part { name: "sb_hbar_p1"; type: RECT;
          clip_to: "sb_hbar";
@@ -310,6 +317,13 @@ group { name: "elm/scroller/base/default";
             rel2.to: "sb_hbar_base";
             color: 0 0 0 0;
             fixed: 1 1;
+         }
+         description { state: "hidden" 0.0;
+            inherit: "default" 0.0;
+            min: 0 0;
+         }
+         description { state: "clicked" 0.0;
+            inherit: "default" 0.0;
          }
       }
       

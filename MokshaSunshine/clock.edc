@@ -108,6 +108,7 @@ group { name: "e/modules/clock/digital";
 					fit: 1 1;
 					size_range: 9 72;
 					text: "--:--";
+					ellipsis: -1;
 					align: 0.5 0.5;
 				}
 			}
@@ -150,6 +151,7 @@ group { name: "e/modules/clock/digital";
 					min: 1 0;
 					size_range: 8 12;
 					align: 0.5 1.0;
+					ellipsis: -1;
 					text: "Tod, 12/30/2011";
 				}
 				visible: 0;
@@ -267,7 +269,7 @@ group { name: "e/modules/clock/calendar/dayname";
             color3: 255 255 255 0;
                            rel1.offset: 13 3;
                rel2.offset: -13 -3;
-            text { font: "Sans"; size: 11;
+            text { font: "Sans"; size: 10;
                min: 1 1;
                align: 0.5 0.5;
                text_class: "module_small";
@@ -358,6 +360,7 @@ group { name: "e/modules/clock/calendar/day";
             color3: 0 0 0 0;
             text { font: "Sans"; size: 10;
                min: 1 1;
+               ellipsis: -1;
                align: 0.5 0.5;
             }
          }
@@ -457,6 +460,7 @@ group { name: "e/modules/clock/calendar";
             text { font: "Sans:style=Bold"; size: 12;
                align: 0.0 0.5;
                min: 0 1;
+               ellipsis: -1;
                text_class: "module_normal";
             }
          }
@@ -475,6 +479,7 @@ group { name: "e/modules/clock/calendar";
             text { font: "Sans:style=Bold"; size: 12;
                align: 1.0 0.5;
                min: 0 1;
+               ellipsis: -1;
                text_class: "module_normal";
             }
          }

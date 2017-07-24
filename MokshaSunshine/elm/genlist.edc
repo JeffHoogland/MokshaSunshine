@@ -1447,7 +1447,7 @@ group { name: "elm/genlist/tree/default/default"; nomouse;
          }
       }
 #define ARROW() \
-      part { name: "arrow_img_l"; mouse_events: 0; insert_after: "sel_bevel"; \
+      part { name: "arrow_img_l"; mouse_events: 0; \
          clip_to: "arrow_clip_l"; \
          scale: 1; \
          ignore_flags: ON_HOLD; \
@@ -1703,6 +1703,43 @@ group { name: "elm/genlist/tree/end_icon/default";
 ODD("elm/genlist/tree_odd/end_icon/default", "elm/genlist/tree/end_icon/default")
 COMPRESS("elm/genlist/tree_compress/end_icon/default", "elm/genlist/tree/end_icon/default")
 COMPRESS_ODD("elm/genlist/tree_compress_odd/end_icon/default", "elm/genlist/tree/end_icon/default")
+
+group { "elm/genlist/item/indent/default"; nomouse;
+   inherit: "elm/genlist/item/default/default";
+   parts {
+      rect { "arrow"; mouse;
+         desc { "default";
+            fixed: 1 0;
+            min: 14 14;
+            aspect: 1.0 1.0;
+            aspect_preference: VERTICAL;
+            align: 0.0 0.5;
+            rel1.to_x: "elm.swallow.pad";
+            rel1.relative: 1.0 0.0;
+            rel2.to_x: "elm.swallow.pad";
+            rel2.relative: 1.0 1.0;
+            color: 0 0 0 0;
+         }
+      }
+      swallow { "elm.swallow.icon";
+         desc { "default";
+            rel1.to_x: "arrow";
+            rel1.offset: 1 2;
+            rel2.to_x: "arrow";
+            rel2.offset: 1 -3;
+         }
+         desc { "flip_enabled";
+            rel1.to_x: "arrow";
+            rel1.offset: 1 2;
+            rel2.to_x: "arrow";
+            rel2.offset: 1 -3;
+         }
+      }
+   }
+}
+ODD("elm/genlist/item_odd/indent/default", "elm/genlist/item/indent/default")
+COMPRESS("elm/genlist/item_compress/indent/default", "elm/genlist/item/indent/default")
+COMPRESS_ODD("elm/genlist/item_compress_odd/indent/default", "elm/genlist/item/indent/default")
 
 group { name: "elm/genlist/tree/no_icon/default";
    inherit: "elm/genlist/item/no_icon/default";
