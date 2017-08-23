@@ -13,7 +13,7 @@ group { name: "e/modules/battery/main";
       public message(Msg_Type:type, id, ...) {
          if ((type == MSG_FLOAT) && (id == 1)) {
             new Float:val;
-            new r = 178, g = 178, b = 178;
+            new r = 255, g = 205, b = 65;
             new lr = 255, lg = 0, lb = 0;
             
             val = getfarg(2);
