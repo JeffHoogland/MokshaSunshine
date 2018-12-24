@@ -19,9 +19,9 @@ group { name: "elm/gengrid/item/default/default";
             visible: 0; \
          } \
       } \
-      CLIP_SWITCH("base","base","base","default","selected")	\
+      CLIP_SWITCH("base","base","base","default","selected")   \
       part { name: "base"; type: RECT; mouse_events: 0; \
-		clip_to: "base_clip_default";	\
+      clip_to: "base_clip_default"; \
          description { state: "default" 0.0; \
             color_class: "ilist_item_base"; \
          } \
@@ -29,14 +29,14 @@ group { name: "elm/gengrid/item/default/default";
             color_class: "ilist_item_odd_base"; \
          } \
       } \
-      part { name: "base_sel"; mouse_events: 0;	\
-		clip_to: "base_clip_selected";	\
-		description { state: "default" 0.0;	\
-			STAY_ON("base")	\
-			image.normal: "selected.png";	\
-			image.border: 2 2 2 2;			\
-		}	\
-	  }	\
+      part { name: "base_sel"; mouse_events: 0; \
+      clip_to: "base_clip_selected";   \
+         description { state: "default" 0.0; \
+         STAY_ON("base")   \
+         image.normal: "selected.png"; \
+         image.border: 2 2 2 2;        \
+      }  \
+     }   \
       program { \
          signal: "elm,state,odd"; source: "elm"; \
          action: STATE_SET "odd" 1.0; \
@@ -243,7 +243,7 @@ group { name: "elm/gengrid/item/default/default";
          }
       }
       //##//
-      
+
       TOPP()
    }
 }
@@ -276,7 +276,7 @@ group { name: "elm/gengrid/item/default_style/default";
       tag: "b" "+ font_weight=Bold";
       tag: "tab" "\t";
    }
-   
+
    parts {
       BASEP()
 
@@ -424,7 +424,7 @@ group { name: "elm/gengrid/item/default_style/default";
          }
       }
       //##//
-      
+
       TOPP()
    }
 }
@@ -449,9 +449,9 @@ group { name: "elm/gengrid/item/up/default";
             image.normal: "menu_arrow_u_normal.png";
          }
          description { state: "selected" 0.0;
-			inherit: "default" 0.0;
+         inherit: "default" 0.0;
             image.normal: "menu_arrow_u_sel.png";
-		 }
+       }
       }
       program { name: "sel_up";
          signal: "elm,state,selected"; source: "elm";
@@ -471,10 +471,10 @@ group { name: "elm/gengrid/item/album-preview/default";
    data.item: "texts" "elm.text";
    data.item: "contents" "elm.swallow.icon.1 elm.swallow.icon.2 elm.swallow.icon.3 elm.swallow.icon.4";
    data.item: "states" "have_files";
-   
+
 
    images.image: "img/folder.png" COMP;
-   
+
    parts {
       BASEP()
 
@@ -605,7 +605,7 @@ group { name: "elm/gengrid/item/album-preview/default";
             color: 255 255 255 64;
          }
       }
-      program {      
+      program {
          signal: "elm,state,have_files,active"; source: "elm";
          action: STATE_SET "visible" 0.0;
          target: "icon_area";
@@ -673,7 +673,7 @@ group { name: "elm/gengrid/item/album-preview/default";
          }
       }
       //##//
-      
+
       TOPP()
    }
 }
@@ -682,7 +682,7 @@ group { name: "elm/gengrid/item/thumb/default";
    data.item: "selectraise" "on";
    data.item: "texts" "elm.text";
    data.item: "contents" "elm.swallow.icon elm.swallow.end";
-   
+
    images.image: "img/shadow_square.png" COMP;
    parts {
 
@@ -739,7 +739,7 @@ group { name: "elm/gengrid/item/thumb/default";
          target: "base";
          target: "icon_area";
       }
-      
+
       //##//
       part { name: "elm.text"; type: TEXT; mouse_events: 0;
          effect: SHADOW BOTTOM;

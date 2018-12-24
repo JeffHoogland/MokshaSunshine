@@ -1,10 +1,10 @@
 group { name: "elm/actionslider/base/default";
 
-	images.image: "slider_runnerh.png" COMP;
-	images.image: "button-normal.png" COMP;
-	images.image: "button-insensitive.png" COMP;
-	images.image: "button-pressed.png" COMP;
-	images.image: "button-prelight.png" COMP;
+   images.image: "slider_runnerh.png" COMP;
+   images.image: "button-normal.png" COMP;
+   images.image: "button-insensitive.png" COMP;
+   images.image: "button-pressed.png" COMP;
+   images.image: "button-prelight.png" COMP;
 
    parts {
       part { name: "base";
@@ -15,9 +15,9 @@ group { name: "elm/actionslider/base/default";
             rel2.offset: -1 -2;
          }
          description { state: "disabled";
-			inherit: "default";
-			color: 255 255 255 200;
-		 }
+         inherit: "default";
+         color: 255 255 255 200;
+       }
       }
      part { name: "icon.dragable.area"; type: SPACER;
          description { state: "default" 0.0;
@@ -104,7 +104,7 @@ group { name: "elm/actionslider/base/default";
       part { name: "elm.drag_button"; type: RECT;
          scale: 1;
          description { state: "default" 0.0;
-			//fixed: 1 1;
+         //fixed: 1 1;
             min: 40 18;
             color: 0 0 0 0;
             rel1.to_x: "elm.drag_button_base";
@@ -118,7 +118,7 @@ group { name: "elm/actionslider/base/default";
             events: "elm.drag_button_base";
          }
       }
-      
+
       part { name: "drag_button"; mouse_events: 0;
          description { state: "default" 0.0;
             image.normal: "button-normal.png";
@@ -126,23 +126,23 @@ group { name: "elm/actionslider/base/default";
             STAY_ON("elm.drag_button")
          }
          desc { "pressed" 0.0;
-			 inherit: "default" 0.0;
-			 image.normal: "button-pressed.png";
-		 }
-		 desc { "over" 0.0;
-			 inherit: "default" 0.0;
-			 image.normal: "button-prelight.png";
-		 }
+          inherit: "default" 0.0;
+          image.normal: "button-pressed.png";
+       }
+       desc { "over" 0.0;
+          inherit: "default" 0.0;
+          image.normal: "button-prelight.png";
+       }
          desc { "disabled" 0.0;
-			 inherit: "default" 0.0;
-			 image.normal: "button-insensitive.png";
-		 }
-		 description { state: "clicked" 0.0;
+          inherit: "default" 0.0;
+          image.normal: "button-insensitive.png";
+       }
+       description { state: "clicked" 0.0;
             inherit: "default" 0.0;
             image.normal: "button-pressed.png";
          }
       }
-       
+
       part { name: "elm.text.indicator"; type: TEXT; mouse_events: 0;
          effect: SHADOW BOTTOM;
          scale: 1;
@@ -183,17 +183,17 @@ group { name: "elm/actionslider/base/default";
       }
    }
    programs {
-	   OVER_P("drag_button","elm.drag_button","default","over")
-	   program {
-		   signal: "mouse,up,1"; source: "elm.drag_button";
-		   action: STATE_SET "default";
-		   target: "drag_button";
-	   }
-	   program {
-		   signal: "mouse,down,1"; source: "elm.drag_button";
-		   action: STATE_SET "pressed";
-		   target: "drag_button";
-	   }
+      OVER_P("drag_button","elm.drag_button","default","over")
+      program {
+         signal: "mouse,up,1"; source: "elm.drag_button";
+         action: STATE_SET "default";
+         target: "drag_button";
+      }
+      program {
+         signal: "mouse,down,1"; source: "elm.drag_button";
+         action: STATE_SET "pressed";
+         target: "drag_button";
+      }
       program {
          signal: "mouse,up,1"; source: "elm.drag_button";
          action: SIGNAL_EMIT "elm.drag_button,mouse,up" "elm";
@@ -242,12 +242,12 @@ group { name: "elm/actionslider/base/default";
 }
 group { name: "elm/actionslider/base/bar";
    inherit: "elm/actionslider/base/default";
-   
+
    images.image: "barH.png" COMP;
-   
+
    parts {
-	  part { name: "base";
-		 insert_before: "bar";
+     part { name: "base";
+       insert_before: "bar";
          description { state: "default" 0.0;
             image.normal: "slider_runnerh.png";
             image.border: 4 4 4 4;
@@ -255,9 +255,9 @@ group { name: "elm/actionslider/base/bar";
             rel2.offset: -1 -2;
          }
          description { state: "disabled";
-			inherit: "default";
-			color: 255 255 255 200;
-		 }
+         inherit: "default";
+         color: 255 255 255 200;
+       }
       }
       part { name: "bar"; mouse_events: 0;
          insert_before: "icon.dragable.area";
@@ -276,13 +276,13 @@ group { name: "elm/actionslider/base/bar";
             }
          }
          description { state: "disabled";
-			inherit: "default";
-			color: 255 255 255 125;
-		 }
+         inherit: "default";
+         color: 255 255 255 125;
+       }
       }
    }
    programs {
-	   program {
+      program {
          signal: "elm,state,disabled"; source: "elm";
          action: STATE_SET "disabled" 0.0;
          target: "base";

@@ -35,12 +35,12 @@ group { name: "elm/slider/horizontal/default";
    alias: "elm/slider/horizontal/media_player/position/flush";
    alias: "elm/slider/horizontal/media_player/volume/default";
    alias: "elm/slider/horizontal/media_player/volume/flush";
-   
-	images.image: "slider_runnerh.png" COMP;
-	images.image: "slider.png" COMP;
-	images.image: "slider0.png" COMP;
-	images.image: "slider_clicked.png" COMP;
-	
+
+   images.image: "slider_runnerh.png" COMP;
+   images.image: "slider.png" COMP;
+   images.image: "slider0.png" COMP;
+   images.image: "slider_clicked.png" COMP;
+
 #define ICON    1
 #define LABEL   2
 #define END     4
@@ -213,7 +213,7 @@ group { name: "elm/slider/horizontal/default";
                text_class: "slider";
                min: 0 0;
                align: 0.0 0.5;
-					ellipsis: -1;
+               ellipsis: -1;
             }
             visible: 0;
          }
@@ -368,9 +368,9 @@ group { name: "elm/slider/horizontal/default";
             image.normal: "slider0.png";
          }
          description { state: "over" 0.0;
-			inherit: "default" 0.0;
-			image.normal: "slider_clicked.png";
-		 }
+         inherit: "default" 0.0;
+         image.normal: "slider_clicked.png";
+       }
          description { state: "clicked" 0.0;
             inherit: "default" 0.0;
             image.normal: "slider_clicked.png";
@@ -406,8 +406,8 @@ group { name: "elm/slider/horizontal/default";
       }
    }
    programs {
-	   
-	  OVER_P("slider","slideevent","default","over")
+
+     OVER_P("slider","slideevent","default","over")
 
       program {
          signal: "mouse,down,1"; source: "elm.dragable.slider";
@@ -457,7 +457,7 @@ group { name: "elm/slider/horizontal/default";
       }
       program {
          signal: "elm,state,text,hidden"; source: "elm";
-         script {         
+         script {
             new m = get_int(slmode);
             m &= ~LABEL; set_int(slmode, m);
             eval_mode(m);
@@ -473,7 +473,7 @@ group { name: "elm/slider/horizontal/default";
       }
       program {
          signal: "elm,state,icon,hidden"; source: "elm";
-         script {         
+         script {
             new m = get_int(slmode);
             m &= ~ICON; set_int(slmode, m);
             eval_mode(m);
@@ -489,7 +489,7 @@ group { name: "elm/slider/horizontal/default";
       }
       program { name: "end_hide";
          signal: "elm,state,end,hidden"; source: "elm";
-         script {         
+         script {
             new m = get_int(slmode);
             m &= ~END; set_int(slmode, m);
             eval_mode(m);
@@ -510,7 +510,7 @@ group { name: "elm/slider/horizontal/default";
       program {
          signal: "elm,state,units,hidden"; source: "elm";
          action:  STATE_SET "default" 0.0;
-         script {         
+         script {
             new m = get_int(slmode);
             m &= ~UNITS; set_int(slmode, m);
             eval_mode(m);
@@ -530,7 +530,7 @@ group { name: "elm/slider/horizontal/default";
       }
       program {
          signal: "elm,state,inverted,off"; source: "elm";
-         script {         
+         script {
             new m = get_int(slmode);
             m &= ~INVERT; set_int(slmode, m);
             eval_mode(m);
@@ -550,7 +550,7 @@ group { name: "elm/slider/horizontal/default";
       }
       program {
          signal: "elm,state,enabled"; source: "elm";
-         script {         
+         script {
             new m = get_int(slmode);
             m &= ~DISABLE; set_int(slmode, m);
             eval_mode(m);
@@ -574,10 +574,10 @@ group { name: "elm/slider/horizontal/indicator/default";
    alias: "elm/slider/horizontal/indicator/disabled";
    alias: "elm/slider/horizontal/popup/default";
    alias: "elm/slider/horizontal/indicator/media_player/position/default";
-   alias: "elm/slider/horizontal/indicator/media_player/position/flush"; 
+   alias: "elm/slider/horizontal/indicator/media_player/position/flush";
    alias: "elm/slider/horizontal/indicator/media_player/volume/default";
-   alias: "elm/slider/horizontal/indicator/media_player/volume/flush"; 
-   
+   alias: "elm/slider/horizontal/indicator/media_player/volume/flush";
+
    parts {
       part { name: "base"; type: SPACER;
          scale: 1;
@@ -710,11 +710,11 @@ group { name: "elm/slider/vertical/default";
    alias: "elm/slider/vertical/media_player/volume/default";
    alias: "elm/slider/vertical/media_player/volume/flush";
 
-	images.image: "slider_runnerv.png" COMP;
-	images.image: "slider.png" COMP;
-	images.image: "slider0.png" COMP;
-	images.image: "slider_clicked.png" COMP;
-	
+   images.image: "slider_runnerv.png" COMP;
+   images.image: "slider.png" COMP;
+   images.image: "slider0.png" COMP;
+   images.image: "slider_clicked.png" COMP;
+
 #define ICON    1
 #define LABEL   2
 #define END     4
@@ -1038,9 +1038,9 @@ group { name: "elm/slider/vertical/default";
             image.normal: "slider0.png";
          }
          description { state: "over" 0.0;
-			inherit: "default" 0.0;
-			image.normal: "slider_clicked.png";
-		 }
+         inherit: "default" 0.0;
+         image.normal: "slider_clicked.png";
+       }
          description { state: "clicked" 0.0;
             inherit: "default" 0.0;
             image.normal: "slider_clicked.png";
@@ -1075,8 +1075,8 @@ group { name: "elm/slider/vertical/default";
          }
       }
    }
-   programs { 
-	    OVER_P("slider","slideevent","default","over")
+   programs {
+       OVER_P("slider","slideevent","default","over")
 
       program {
          signal: "mouse,down,1"; source: "elm.dragable.slider";
@@ -1126,7 +1126,7 @@ group { name: "elm/slider/vertical/default";
       }
       program {
          signal: "elm,state,text,hidden"; source: "elm";
-         script {         
+         script {
             new m = get_int(slmode);
             m &= ~LABEL; set_int(slmode, m);
             eval_mode(m);
@@ -1142,7 +1142,7 @@ group { name: "elm/slider/vertical/default";
       }
       program {
          signal: "elm,state,icon,hidden"; source: "elm";
-         script {         
+         script {
             new m = get_int(slmode);
             m &= ~ICON; set_int(slmode, m);
             eval_mode(m);
@@ -1158,7 +1158,7 @@ group { name: "elm/slider/vertical/default";
       }
       program { name: "end_hide";
          signal: "elm,state,end,hidden"; source: "elm";
-         script {         
+         script {
             new m = get_int(slmode);
             m &= ~END; set_int(slmode, m);
             eval_mode(m);
@@ -1179,7 +1179,7 @@ group { name: "elm/slider/vertical/default";
       program {
          signal: "elm,state,units,hidden"; source: "elm";
          action:  STATE_SET "default" 0.0;
-         script {         
+         script {
             new m = get_int(slmode);
             m &= ~UNITS; set_int(slmode, m);
             eval_mode(m);
@@ -1199,7 +1199,7 @@ group { name: "elm/slider/vertical/default";
       }
       program {
          signal: "elm,state,inverted,off"; source: "elm";
-         script {         
+         script {
             new m = get_int(slmode);
             m &= ~INVERT; set_int(slmode, m);
             eval_mode(m);
@@ -1219,7 +1219,7 @@ group { name: "elm/slider/vertical/default";
       }
       program {
          signal: "elm,state,enabled"; source: "elm";
-         script {         
+         script {
             new m = get_int(slmode);
             m &= ~DISABLE; set_int(slmode, m);
             eval_mode(m);
