@@ -137,6 +137,10 @@ group { name: "elm/actionslider/base/default";
 			 inherit: "default" 0.0;
 			 image.normal: "button-insensitive.png";
 		 }
+		 description { state: "clicked" 0.0;
+            inherit: "default" 0.0;
+            image.normal: "button-pressed.png";
+         }
       }
        
       part { name: "elm.text.indicator"; type: TEXT; mouse_events: 0;
