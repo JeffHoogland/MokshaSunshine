@@ -9,7 +9,7 @@ data.item: "focus_highlight" "on";
    images.image: "button-prelight.png" COMP;
    images.image: "button-insensitive.png" COMP;
    images.image: "focus.png" COMP;
-   
+
 #define ICON     1
 #define LABEL    2
 #define MASK     3
@@ -63,18 +63,18 @@ data.item: "focus_highlight" "on";
             }
          } else {
             if (!d) {
-				set_state(PART:"elm.swallow.content", "default", 0.0);
-				set_state(PART:"sizer.content", "default", 0.0);
-				set_state(PART:"elm.text", "icononly", 0.0);
-				set_state(PART:"icon_clip", "default", 0.0);
-				set_state(PART:"event", "default", 0.0);
-			} else {
-				set_state(PART:"elm.swallow.content", "default", 0.0);
-				set_state(PART:"sizer.content", "default", 0.0);
-				set_state(PART:"elm.text", "icononly", 0.0);
-				set_state(PART:"icon_clip", "disabled", 0.0);
-				set_state(PART:"event", "disabled", 0.0);
-			}
+            set_state(PART:"elm.swallow.content", "default", 0.0);
+            set_state(PART:"sizer.content", "default", 0.0);
+            //set_state(PART:"elm.text", "icononly", 0.0);
+            set_state(PART:"icon_clip", "default", 0.0);
+            set_state(PART:"event", "default", 0.0);
+         } else {
+            set_state(PART:"elm.swallow.content", "default", 0.0);
+            set_state(PART:"sizer.content", "default", 0.0);
+            //set_state(PART:"elm.text", "icononly", 0.0);
+            set_state(PART:"icon_clip", "disabled", 0.0);
+            set_state(PART:"event", "disabled", 0.0);
+         }
          }
       }
    }
@@ -88,17 +88,17 @@ data.item: "focus_highlight" "on";
             fill.smooth: 0;
          }
          description { state: "clicked" 0.0;
-			 inherit: "default" 0.0;
-			 image.normal: "button-pressed.png";
-		 }
-		 description { state: "prelight" 0.0;
-			 inherit: "default" 0.0;
-			 image.normal: "button-prelight.png";
-		 }
-		 description { state: "disabled" 0.0;
-			 inherit: "default" 0.0;
-			 image.normal: "button-insensitive.png";
-		 }
+          inherit: "default" 0.0;
+          image.normal: "button-pressed.png";
+       }
+       description { state: "prelight" 0.0;
+          inherit: "default" 0.0;
+          image.normal: "button-prelight.png";
+       }
+       description { state: "disabled" 0.0;
+          inherit: "default" 0.0;
+          image.normal: "button-insensitive.png";
+       }
       }
       part { name: "icon_clip"; type: RECT;
          description { state: "default" 0.0;
@@ -220,16 +220,16 @@ data.item: "focus_highlight" "on";
          }
       }
       part { name: "focus"; type: IMAGE; mouse_events: 0;
-		  description { state: "default" 0.0;
-			  image.normal: "focus.png";
-			  STAY_ON("base")
-			  visible: 0;
-		  }
-		  description { state: "focused" 0.0;
-			  inherit: "default" 0.0;
-			  visible: 1;
-		  }
-	  }
+        description { state: "default" 0.0;
+           image.normal: "focus.png";
+           STAY_ON("base")
+           visible: 0;
+        }
+        description { state: "focused" 0.0;
+           inherit: "default" 0.0;
+           visible: 1;
+        }
+     }
       part { name: "event"; type: RECT;
          description { state: "default" 0.0;
             color: 0 0 0 0;
@@ -241,7 +241,7 @@ data.item: "focus_highlight" "on";
       }
    }
    programs {
-	  OVER_P("base","event","default","prelight")
+     OVER_P("base","event","default","prelight")
 program {
          signal: "mouse,down,1"; source: "event";
          action: SIGNAL_EMIT "elm,action,press" "elm";
@@ -263,7 +263,7 @@ program {
       program { name: "buttonactivate";
          signal: "elm,anim,activate"; source: "elm";
          action: STATE_SET "clicked" 0.0;
-		 target: "base";
+       target: "base";
          after: "button_unpressed_anim";
       }
       program { name: "button_unpressed_anim";
@@ -272,8 +272,8 @@ program {
          target: "base";
       }
       program {
-		signal: "elm,action,focus_highlight,hide"; source: "elm";
-		action: STATE_SET "default" 0.0;
+      signal: "elm,action,focus_highlight,hide"; source: "elm";
+      action: STATE_SET "default" 0.0;
          target: "focus";
       }
       program {
@@ -352,24 +352,24 @@ program {
 }
 
 group { name: "elm/button/base/anchor";
-	inherit: "elm/button/base/default";
-	parts {
-		part { name: "base";
+   inherit: "elm/button/base/default";
+   parts {
+      part { name: "base";
          description { state: "default" 0.0;
             color: TRANSPARENT;
          }
          description { state: "clicked" 0.0;
-			 inherit: "default" 0.0;
-			 image.normal: "button-pressed.png";
-			 color: VISIBLE;
-		 }
-		 description { state: "prelight" 0.0;
-			 inherit: "default" 0.0;
-			 image.normal: "button-prelight.png";
-			 color: VISIBLE;
-		 }
+          inherit: "default" 0.0;
+          image.normal: "button-pressed.png";
+          color: VISIBLE;
+       }
+       description { state: "prelight" 0.0;
+          inherit: "default" 0.0;
+          image.normal: "button-prelight.png";
+          color: VISIBLE;
+       }
       }
-	}
+   }
 }
 
 group { name: "elm/button/base/colorselector/left/default";
@@ -437,7 +437,7 @@ group { name: "elm/button/base/hoversel_vertical/default";
    images.image: "menu_arrow_d_normal.png" COMP;
    images.image: "menu_arrow_d_sel.png" COMP;
 
-     
+
    parts {
       part { name: "elm.text"; type: TEXT;
          description { state: "default" 0.0;
@@ -455,9 +455,9 @@ group { name: "elm/button/base/hoversel_vertical/default";
             inherit: "default" 0.0;
             rel1.offset: 2 5;
             text {
-				min: 1 1;
-				ellipsis: -1;
-				}
+            min: 1 1;
+            ellipsis: -1;
+            }
             visible: 1;
          }
          description { state: "textonly" 0.0;
@@ -483,22 +483,22 @@ group { name: "elm/button/base/hoversel_vertical/default";
          }
       }
       part { name: "separator"; mouse_events: 0; type: RECT;
-		description { state: "default" 0.0;
-			rel1.to: "arrow";
-			rel1.offset: -6 -8;
-			rel2.to: "arrow";
-			rel2.relative: 0.0 1.0;
-			rel2.offset: -4 6;
-			min: 1 1;
-			max: 1 999;
-			color: 0 0 0 30;
-		}
-		description { state: "disabled" 0.0;
-			inherit: "default";
-			color: 0 0 0 10;
-		}
-      
-	  }
+      description { state: "default" 0.0;
+         rel1.to: "arrow";
+         rel1.offset: -6 -8;
+         rel2.to: "arrow";
+         rel2.relative: 0.0 1.0;
+         rel2.offset: -4 6;
+         min: 1 1;
+         max: 1 999;
+         color: 0 0 0 30;
+      }
+      description { state: "disabled" 0.0;
+         inherit: "default";
+         color: 0 0 0 10;
+      }
+
+     }
       part { name: "arrow"; mouse_events: 0;
          description { state: "default" 0.0;
             align: 1.0 0.5;
@@ -516,13 +516,13 @@ group { name: "elm/button/base/hoversel_vertical/default";
             image.normal: "menu_arrow_d_sel.png";
          }
          description { state: "disabled" 0.0;
-			inherit: "default";
-			color: 255 255 255 125;
-		}
+         inherit: "default";
+         color: 255 255 255 125;
+      }
       }
    }
    programs {
-	   program { name: "button_state_disabled2";
+      program { name: "button_state_disabled2";
          signal: "elm,state,disabled"; source: "elm";
          action: STATE_SET "disabled" 0.0;
          target: "base";
@@ -555,7 +555,7 @@ group { name: "elm/button/base/hoversel_vertical/default";
 group { name: "elm/button/base/hoversel_vertical_entry/default";
    alias: "elm/button/base/hoversel_vertical_entry/entry";
 
-	images.image: "menuitem.png" COMP;
+   images.image: "menuitem.png" COMP;
 
 #define ICON     1
 #define LABEL    2
@@ -784,9 +784,9 @@ group { name: "elm/button/base/hoversel_vertical_entry/default";
       }
    }
    programs {
-		OVER_P("base","event","default","active")
-		OVER_P("label3","event","default","active")
-		OVER_P("click_clip","event","default","active")
+      OVER_P("base","event","default","active")
+      OVER_P("label3","event","default","active")
+      OVER_P("click_clip","event","default","active")
       program {
          signal: "mouse,down,1"; source: "event";
          action: SIGNAL_EMIT "elm,action,press" "elm";

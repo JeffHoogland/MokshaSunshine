@@ -1,11 +1,11 @@
-[X-GNOME-Metatheme]
-Name=<yourawesometheme>
-Comment=<Your Awesome Theme>
-
+[Desktop Entry]
 Type=X-GNOME-Metatheme
+Name=oomox-MokshaSunshine
+Comment=A partially sexual act; when a female (of any species; mostly humanoids) rubs the ears/lobes of a male Ferengi, creating sensual emotions and chemical reactions in the male (and sometimes in the female).
 Encoding=UTF-8
-#GtkTheme=<yourawesometheme>
-#MetacityTheme=<yourawesometheme>
-#IconTheme=<name_of_icon_theme>
-#CursorTheme=<name_of_cursor_theme>
-#CursorSize=<24>
+
+[X-GNOME-Metatheme]
+Name=oomox-MokshaSunshine
+GtkTheme=oomox-MokshaSunshine
+IconTheme=oomox-MokshaSunshine
+MetacityTheme=oomox-MokshaSunshine
