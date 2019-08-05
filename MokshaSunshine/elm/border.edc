@@ -62,21 +62,21 @@ group { name: "elm/ews/decoration/default";
         signal: "elm,state,focus,on"; source: "elm";
         action: STATE_SET "focused" 0.0;
         target: "elm.text.title";
-		target: "button-close";
-		target: "button-min";
-		target: "button-max";
-		target: "top-center-over";
-		target: "top-right-over";
+		//~ target: "button-close";
+		//~ target: "button-min";
+		//~ target: "button-max";
+		//~ target: "top-center-over";
+		//~ target: "top-right-over";
       }
       program {
         signal: "elm,state,focus,off"; source: "elm";
         action: STATE_SET "default" 0.0;
         target: "elm.text.title";
-		target: "button-close";
-		target: "button-min";
-		target: "button-max";
-		target: "top-center-over";
-		target: "top-right-over";
+		//~ target: "button-close";
+		//~ target: "button-min";
+		//~ target: "button-max";
+		//~ target: "top-center-over";
+		//~ target: "top-right-over";
       }
       
   }

@@ -79,6 +79,10 @@ group { name: "elm/focus_highlight/top/default";
             rel1.to: "base";
             rel2.to: "base";
          }
+         description { state: "hi" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+         }
       }
       program {
          signal: "elm,action,focus,show"; source: "elm";

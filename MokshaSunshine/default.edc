@@ -634,6 +634,11 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					visible: 0;
 					color: 255 255 255 0;
 				}
+				description { state: "clicked" 0.0;
+					inherit: "default" 0.0;
+					visible: 0;
+					color: 255 255 255 255;
+				}
 			}
 			part { name: "right_arrow";
 				mouse_events: 1;
@@ -650,6 +655,11 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					inherit: "default" 0.0;
 					visible: 0;
 					color: 255 255 255 0;
+				}
+				description { state: "clicked" 0.0;
+					inherit: "default" 0.0;
+					visible: 0;
+					color: 255 255 255 255;
 				}
 			}
 			part { name: "e.dragable.hbar";
@@ -2917,13 +2927,11 @@ group { name: "e/pointer/enlightenment/rotate/color";
       program {
          signal: "e,toolbar,left"; source: "e";
          action: STATE_SET "tb_left" 0.0;
-         target: "e.swallow.toolbar";
          target: "region";
       }
       program {
          signal: "e,toolbar,right"; source: "e";
          action: STATE_SET "tb_right" 0.0;
-         target: "e.swallow.toolbar";
          target: "region";
       }
       program {
@@ -8993,6 +9001,12 @@ group { name: "e/fileman/toolbar/default/base";
 					inherit: "default" 0.0;
 					visible: 0;
 				}
+				description { state: "combo" 0.0;
+					inherit: "default" 0.0;
+					rel1.relative: 1.0 0.0;
+					rel1.offset: 2 5;
+					rel1.to_x: "e.swallow.icon";
+				}
 				description { state: "disabled" 0.0;
 					inherit: "default" 0.0;
 					color: 201 181 156 255;
@@ -12284,6 +12298,10 @@ group { name: "e/modules/conf/main";
             rel2.relative: 0.5 0.5;
             FIXED_SIZE(100, 127)
          }
+         description { state: "done" 0.0;
+					inherit: "default" 0.0;
+					color: 255 255 255 255;
+				}
       }
       part { name: "logo_glow";
          description { state: "default" 0.0;
