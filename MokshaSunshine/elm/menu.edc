@@ -737,6 +737,9 @@ group { name: "elm/hover/base/main_menu_submenu/default";
          description { state: "default" 0.0;
             color: 0 0 0 0;
          }
+         description { state: "visible" 0.0;
+            inherit: "default" 0.0;
+         }
       }
       part { name: "bottomclip"; type: RECT;
          description { state: "default" 0.0;
