@@ -7,7 +7,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   fill="#d2a052"
+   fill="#419236"
    viewBox="0 0 48 48"
    version="1.1"
    id="svg10"
@@ -27,24 +27,24 @@
   <defs
      id="defs14" />
   <sodipodi:namedview
-     pagecolor="#d2a052"
-     bordercolor="#d2a052"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
      borderopacity="1"
      objecttolerance="10"
      gridtolerance="10"
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="795"
-     inkscape:window-height="480"
+     inkscape:window-width="1328"
+     inkscape:window-height="737"
      id="namedview12"
      showgrid="false"
      inkscape:zoom="4.9166667"
-     inkscape:cx="2.2372881"
+     inkscape:cx="1.4237288"
      inkscape:cy="24"
      inkscape:window-x="38"
      inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg10" />
   <rect
      height="36"
@@ -68,12 +68,12 @@
      x="11.26"
      y="25.64"
      id="text8"
-     style="fill:#d2a052;">
+     style="fill:#d2a052;fill-opacity:1;">
     <tspan
        line-height="100%"
        x="11.26"
        y="25.64"
        id="tspan6"
-       style="fill:#d2a052;_</tspan>
+       style="fill:#d2a052;fill-opacity:1;">&gt;_</tspan>
   </text>
 </svg>
