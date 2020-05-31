@@ -16,6 +16,7 @@ data {
 	item: "theme/version"	"beta";
 	item: "theme/author"	"Alberto 'Duma' Verdoja";
 	item: "gtk-theme"       "Morning Sunshine";
+	item: "icon-theme"      "Icons-Moksha-Sunshine"; 
 	item: "version"			"110";
 	
 }
