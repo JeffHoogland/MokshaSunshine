@@ -1467,13 +1467,13 @@
                   to: "base";
                   offset: 5 2;
                }
+               image.normal: "selected.png";
                color: 255 255 255 0;
             }
             description {
                state: "selected" 0.0;
                inherit: "default" 0.0;
                color: 255 255 255 255;
-               image.normal: "selected.png";
             }
          }
          

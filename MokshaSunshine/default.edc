@@ -4689,6 +4689,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				repeat_events: 0;
 				description { state: "default" 0.0;
 					color:		0 0 0 0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 0;
 				}
 				description { state: "visible" 0.0;
 					aspect: 1.0 1.0;
@@ -4697,6 +4699,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					min: 24 24;
 					rel1.relative: 0.75 0.0;
 					rel2.relative: 1.0 1.0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 1;
 				}
 				description { state: "copy" 0.0;
 					inherit: "visible" 0.0;
@@ -5087,6 +5091,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				repeat_events: 0;
 				description { state: "default" 0.0;
 					color:		0 0 0 0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 0;
 				}
 				description { state: "visible" 0.0;
 					aspect: 1.0 1.0;
@@ -5095,6 +5101,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					min: 24 24;
 					rel1.relative: 0.75 0.0;
 					rel2.relative: 1.0 1.0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 1;
 				}
 				description { state: "copy" 0.0;
 					inherit: "visible" 0.0;
@@ -6156,6 +6164,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				description {
 					state:		"default" 0.0;
 					color:		0 0 0 0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 0;
 				}
 				description {
 					state:		"visible" 0.0;
@@ -6168,6 +6178,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					rel2 {
 						relative: 1.0 1.0;
 					}
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 1;
 				}
 				description {
 					state:		"copy" 0.0;
@@ -6557,6 +6569,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				description {
 					state:		"default" 0.0;
 					color:		0 0 0 0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 0;
 				}
 				description {
 					state:		"visible" 0.0;
@@ -6569,6 +6583,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					rel2 {
 						relative: 1.0 1.0;
 					}
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 1;
 				}
 				description {
 					state:		"copy" 0.0;
@@ -6959,6 +6975,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				description {
 					state:		"default" 0.0;
 					color:		0 0 0 0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 0;
 				}
 				description {
 					state:		"visible" 0.0;
@@ -6971,6 +6989,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					rel2 {
 						relative: 1.0 1.0;
 					}
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 1;
 				}
 				description {
 					state:		"copy" 0.0;
@@ -7361,6 +7381,10 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				description {
 					state:		"default" 0.0;
 					color:		0 0 0 0;
+					image {
+						normal:  "icon_efm_dnd_ask.png";
+					}
+					visible: 0;
 				}
 				description {
 					state:		"visible" 0.0;
@@ -7373,6 +7397,10 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					rel2 {
 						relative: 1.0 1.0;
 					}
+					image {
+						normal:  "icon_efm_dnd_ask.png";
+					}
+					visible: 1;
 				}
 				description {
 					state:		"copy" 0.0;
