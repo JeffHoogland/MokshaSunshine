@@ -4,9 +4,9 @@
 
    group {
       name: "e/modules/everything/list";
-		images {
-			image: "everything_bottom.png" COMP;
-		}
+		//~ images {
+			//~ image: "everything_bottom.png" COMP;
+		//~ }
       parts {
          part {
             name: "list_frame";

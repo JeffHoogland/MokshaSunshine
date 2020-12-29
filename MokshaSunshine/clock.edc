@@ -441,7 +441,7 @@ group { name: "e/modules/clock/calendar";
    images.image: "menu_arrow_normal.png" COMP;
    images.image: "menu_arrow_l_sel.png" COMP;
    images.image: "menu_arrow_sel.png" COMP;
-   images.image: "img/scoll_bg.png" COMP;
+   //~ images.image: "img/scoll_bg.png" COMP;
    images.image: "inset_sunk.png" COMP;
    parts {
       part { name: "e.text.month"; type: TEXT;

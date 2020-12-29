@@ -54,7 +54,7 @@ group { name: "e/conf/randr/main/monitor";
 
 group { name: "e/conf/randr/main/frame";
    images.image: "hole_tiny.png" COMP;
-   images.image: "led_tiny_orange.png" COMP;
+   //~ images.image: "led_tiny_orange.png" COMP;
    images.image: "led_tiny_green.png" COMP;
    images.image: "screen_bg.png" COMP;
    images.image: "screen_fg.png" COMP;
