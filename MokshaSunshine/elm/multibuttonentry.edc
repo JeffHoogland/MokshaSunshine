@@ -73,15 +73,15 @@ group { name: "elm/multibuttonentry/guidetext/default";
 
 group { name: "elm/multibuttonentry/btn/default";
    
-   images.image: "img/button_base.png" COMP;
-   images.image: "img/button1_SH.png" COMP;
-   images.image: "img/button0_SH.png" COMP;
-   images.image: "img/button2_SH.png" COMP;
-   images.image: "img/button2b_SH.png" COMP;
-   images.image: "img/button2b.png" COMP;
-   images.image: "img/button3_SH.png" COMP;
-   images.image: "img/button_foc1_SH.png" COMP;
-   images.image: "img/button_foc3_SH.png" COMP;
+   //~ images.image: "img/button_base.png" COMP;
+   //~ images.image: "img/button1_SH.png" COMP;
+   //~ images.image: "img/button0_SH.png" COMP;
+   //~ images.image: "img/button2_SH.png" COMP;
+   //~ images.image: "img/button2b_SH.png" COMP;
+   //~ images.image: "img/button2b.png" COMP;
+   //~ images.image: "img/button3_SH.png" COMP;
+   //~ images.image: "img/button_foc1_SH.png" COMP;
+   //~ images.image: "img/button_foc3_SH.png" COMP;
    
    images.image: "sym_close_dark_normal.png" COMP;
    images.image: "sym_close_dark_selected.png" COMP;

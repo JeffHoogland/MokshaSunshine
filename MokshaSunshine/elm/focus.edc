@@ -1,5 +1,5 @@
 group { name: "elm/focus_highlight/top/default";
-   images.image: "focus" COMP;
+   images.image: "focus.png" COMP;
    data.item: "animate" "on";
    script {
       public s_x, s_y, s_w, s_h; /* source */

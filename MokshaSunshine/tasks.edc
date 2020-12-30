@@ -4,7 +4,7 @@
    group { name:"e/modules/tasks/item";
       images {
          image: "button-normal.png" COMP;
-         image: "button-prelighted.png" COMP;
+         image: "button-prelight.png" COMP;
          image: "button-pressed.png" COMP;
          image: "exclam.png" COMP;
       }

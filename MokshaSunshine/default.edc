@@ -182,27 +182,27 @@ collections { /* begin the collection of edje groups that are in this file */
 
 images {
 //~ border: default border style
-image: "images/window-border_im9.png" COMP; 	/* bottom center */
-image: "images/window-border_im10.png" COMP; 	/* bottom left */
-image: "images/window-border_im11.png" COMP; 	/* bottom right */
-image: "images/window-border_im12.png" COMP;	/* shadow overlay */
+//~ image: "images/window-border_im9.png" COMP; 	/* bottom center */
+//~ image: "images/window-border_im10.png" COMP; 	/* bottom left */
+//~ image: "images/window-border_im11.png" COMP; 	/* bottom right */
+//~ image: "images/window-border_im12.png" COMP;	/* shadow overlay */
 
 //~ border: dialog border style
-image: "images/window-border_im18.png" COMP; 	/*  */
-image: "images/window-border_im19.png" COMP; 	/*  */
-image: "images/window-border_im20.png" COMP;	/*  */
+//~ image: "images/window-border_im18.png" COMP; 	/*  */
+//~ image: "images/window-border_im19.png" COMP; 	/*  */
+//~ image: "images/window-border_im20.png" COMP;	/*  */
 
 //~ border: application blend style
-image: "images/window-border_im15.png" COMP; 	/* bottom left */
-image: "images/window-border_im16.png" COMP;	/* bottom center */
-image: "images/window-border_im17.png" COMP;	/* bottom right */
+//~ image: "images/window-border_im15.png" COMP; 	/* bottom left */
+//~ image: "images/window-border_im16.png" COMP;	/* bottom center */
+//~ image: "images/window-border_im17.png" COMP;	/* bottom right */
 
 //~ border buttons
-image: "images/window-border_bt0.png" COMP; /* base */
-image: "images/window-border_bt2.png" COMP; /* minimize */
-image: "images/window-border_bt3.png" COMP; /* maximize */
-image: "images/window-border_bt4.png" COMP; /* close */
-image: "images/window-border_bt5.png" COMP; /* base for border menu */
+//~ image: "images/window-border_bt0.png" COMP; /* base */
+//~ image: "images/window-border_bt2.png" COMP; /* minimize */
+//~ image: "images/window-border_bt3.png" COMP; /* maximize */
+//~ image: "images/window-border_bt4.png" COMP; /* close */
+//~ image: "images/window-border_bt5.png" COMP; /* base for border menu */
 
 image: "bd_top_left.png" COMP;
 image: "bd_top_right.png" COMP;
@@ -224,7 +224,7 @@ image: "bd_top_overm.png" COMP;
 image: "bd_top_right_over.png" COMP;
 image: "bd_top_right_overs.png" COMP;
 
-image: "bd_left.png" COMP;
+//~ image: "bd_left.png" COMP;
 image: "win_shadow.png" COMP;
 }
 #include "border.edc"
@@ -4689,6 +4689,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				repeat_events: 0;
 				description { state: "default" 0.0;
 					color:		0 0 0 0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 0;
 				}
 				description { state: "visible" 0.0;
 					aspect: 1.0 1.0;
@@ -4697,6 +4699,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					min: 24 24;
 					rel1.relative: 0.75 0.0;
 					rel2.relative: 1.0 1.0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 1;
 				}
 				description { state: "copy" 0.0;
 					inherit: "visible" 0.0;
@@ -5087,6 +5091,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				repeat_events: 0;
 				description { state: "default" 0.0;
 					color:		0 0 0 0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 0;
 				}
 				description { state: "visible" 0.0;
 					aspect: 1.0 1.0;
@@ -5095,6 +5101,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					min: 24 24;
 					rel1.relative: 0.75 0.0;
 					rel2.relative: 1.0 1.0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 1;
 				}
 				description { state: "copy" 0.0;
 					inherit: "visible" 0.0;
@@ -6156,6 +6164,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				description {
 					state:		"default" 0.0;
 					color:		0 0 0 0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 0;
 				}
 				description {
 					state:		"visible" 0.0;
@@ -6168,6 +6178,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					rel2 {
 						relative: 1.0 1.0;
 					}
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 1;
 				}
 				description {
 					state:		"copy" 0.0;
@@ -6557,6 +6569,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				description {
 					state:		"default" 0.0;
 					color:		0 0 0 0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 0;
 				}
 				description {
 					state:		"visible" 0.0;
@@ -6569,6 +6583,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					rel2 {
 						relative: 1.0 1.0;
 					}
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 1;
 				}
 				description {
 					state:		"copy" 0.0;
@@ -6959,6 +6975,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				description {
 					state:		"default" 0.0;
 					color:		0 0 0 0;
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 0;
 				}
 				description {
 					state:		"visible" 0.0;
@@ -6971,6 +6989,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					rel2 {
 						relative: 1.0 1.0;
 					}
+					image.normal:  "icon_efm_dnd_ask.png";
+					visible: 1;
 				}
 				description {
 					state:		"copy" 0.0;
@@ -7361,6 +7381,10 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				description {
 					state:		"default" 0.0;
 					color:		0 0 0 0;
+					image {
+						normal:  "icon_efm_dnd_ask.png";
+					}
+					visible: 0;
 				}
 				description {
 					state:		"visible" 0.0;
@@ -7373,6 +7397,10 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					rel2 {
 						relative: 1.0 1.0;
 					}
+					image {
+						normal:  "icon_efm_dnd_ask.png";
+					}
+					visible: 1;
 				}
 				description {
 					state:		"copy" 0.0;
@@ -7987,8 +8015,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 
 group { name: "e/fileman/toolbar/default/base";
 	images {
-		image: "toolbar_top.png" COMP;
-		image: "toolbar_bottom.png" COMP;
+		//~ image: "toolbar_top.png" COMP;
+		//~ image: "toolbar_bottom.png" COMP;
 	}
 	parts {
 		part { name: "base";
@@ -12237,7 +12265,7 @@ group { name: "e/modules/conf/main";
 		images {
 			image: "wp_bottom.png" COMP;
 			image: "wp_far.png" COMP;
-			image: "wp_logo_overlay.png" COMP;
+			//~ image: "wp_logo_overlay.png" COMP;
 			image: "wp_logo_overlay2.png" COMP;
 			image: "wp_shades.png" COMP;
 			image: "wp_shades_left.png" COMP;

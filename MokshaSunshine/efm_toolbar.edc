@@ -210,7 +210,7 @@
    name: "modules/efm_navigation/pathbar_scrollframe";
       images {
       image: "icon_left_arrow.png" COMP;
-      image: "img_right_arrow.png" COMP;
+      image: "icon_right_arrow.png" COMP;
       }
 
       parts {
@@ -307,6 +307,7 @@
 	 }
 	 part {
 	 name: "event";
+	 type: RECT;
 	 mouse_events: 1;
 	 repeat_events: 1;
 	    description {
