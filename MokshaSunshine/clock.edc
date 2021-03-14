@@ -327,7 +327,7 @@ group { name: "e/modules/clock/calendar/day";
    }
    parts {
 	   part { name: "clip"; type: RECT;
-            mouse_events: 0;
+            mouse_events: 1;
             description { state: "default" 0.0;
                color: 255 255 255 255;
             }
@@ -349,7 +349,16 @@ group { name: "e/modules/clock/calendar/day";
             visible: 1;
          }
       }   
-         
+      part { name: "day"; type: RECT;
+             mouse_events: 1;
+             description { state: "default" 0.0;
+               color: 0 0 0 0;
+             }
+      }
+      program { name: "prev_clicked";
+            signal: "mouse,clicked,1*"; source: "day";
+            action: SIGNAL_EMIT "e,action,date,get" "";
+      } 
       part { name: "e.text.label"; type: TEXT; mouse_events: 0;
          effect: SHADOW BOTTOM;
          scale: 1;
@@ -385,7 +394,6 @@ group { name: "e/modules/clock/calendar/day";
              color_class: "calendar_weekend";
          }
       }
-      
    }
    programs {
       program {
@@ -680,6 +688,7 @@ item { \
 	part {
 		name: "overlay";
 		type: IMAGE;
+    mouse_events: 0;
 		description {
 			state: "default" 0.0;
 			rel1.to: "inset";
